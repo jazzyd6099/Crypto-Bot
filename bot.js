@@ -27,11 +27,10 @@ client.on("message", (message) => {
     message.channel.send("pong.");
   } else
     if (message.content.startsWith(prefix + "server")) {
-	message.channel.send({embed: {
-              color: embedGreen,
-              title: "Server Information",
-              description: "Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}",
-   }});
+	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
+    } else
+	    if (message.content.startsWith(prefix+"userinfo")) {
+		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
   }
 });
 
