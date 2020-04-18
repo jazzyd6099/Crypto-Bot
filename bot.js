@@ -54,7 +54,6 @@ client.on("message", (message) => {
        				     .setColor(0x00A2E8)
 				    message.channel.send({embed})
 				  }
-		    }
 		    });
 	client.on("message", (message) => {
 		if (message.content.includes("need my commands? Okay, here they are.")) {
