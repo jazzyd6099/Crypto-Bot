@@ -11,6 +11,12 @@ var x = [
 ]
 
 var output = x[Math.floor(Math.random()*x.length)];
+
+var names = [
+	"Gay.",
+	"Bi.",
+	"An idiot.",
+	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
 
@@ -93,6 +99,13 @@ client.on("message", (message) => {
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
+				if (message.content.startsWith(prefix+"whatami")) {
+						message.channel.send({embed: {
+							color: 13101459,
+							title: "You are..",
+							description: (names[Math.floor(Math.random() * names.length)]),
+						}});
+								     } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 		    } else
