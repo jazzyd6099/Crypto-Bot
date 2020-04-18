@@ -92,10 +92,6 @@ client.on("message", (message) => {
 				    message.channel.send({embed})
 				  }
 		    });
-client.on("message.", async (message) => {
-	if (!message.content.startsWith(prefix)) return;
-	
-}});
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
