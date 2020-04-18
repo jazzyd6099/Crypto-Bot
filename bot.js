@@ -105,7 +105,8 @@ client.on("message", (message) => {
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
 		    let user = message.mentions.members.first();
-		    if (!user) return funcs.send(`Please mention somebody to get information about them.`);
+		    
+		if(message.mentions.users.size < 1) return message.reply("Mention someone so I can get information about them.");
 		    const member = await message.channel.guild.members.get(user.id);
 		      let embed = new Discord.MessageEmbed()
         	    .setColor(13101459)
