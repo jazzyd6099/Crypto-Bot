@@ -104,9 +104,6 @@ client.on("message", (message) => {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
-		    let user = message.mentions.members.first();
-		    
-		if(message.mentions.users.size < 1) return message.reply("Mention someone so I can get information about them.");
 		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
