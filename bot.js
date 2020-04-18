@@ -18,6 +18,11 @@ const embedGray = 0x777777
 
 client.on("ready", () => {
   console.log("I am ready.");
+	  
+	client.user.setActivity("Something."); 
+       client.user.setPresence({ activity: { name: 'Something.' }, status: 'idle' })
+  .then(console.log)
+  .catch(console.error);
 });
 
 client.on("message", (message) => {
