@@ -97,7 +97,6 @@ client.on("message", (message) => {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
-		    let user = message.mentions.users.first() || message.author;
 		message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
