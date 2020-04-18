@@ -132,15 +132,9 @@ client.on("message", (message) => {
 					    const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
-					    message.awaitReactions(filter, { maxMatches: 1, time: 60000, errors: ['time'] })
+			message.awaitReactions(filter, { maxMatches: 1, time: 60000, errors: ['time'] })
 			.then(collected => {
 				const reaction = collected.first();
-
-				if (reaction.emoji.name === '👍') {
-					message.reply('you reacted with a thumbs up.');
-				} else {
-					message.reply('you reacted with a thumbs down.');	
-				}
 			})
 			.catch(collected => {
 				console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
