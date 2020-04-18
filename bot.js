@@ -89,7 +89,7 @@ client.on("message.", async message => {
 	
 	message.delete({timeout: 1000});
 	
-});
+};
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
