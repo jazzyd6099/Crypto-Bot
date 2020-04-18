@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require("discord.js");
 const { prefix } = require('./config.json');
+const activities = require('../../assets/jsons/activity');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -76,8 +77,14 @@ const embedGray = 0x777777
 client.on("ready", () => {
   console.log("I am ready.");
 	  
-	client.user.setActivity("Something."); 
-       client.user.setPresence({ activity: { name: 'Something.' }, status: 'idle' })
+const activity = activities[Math.floor(Math.random() * activities.length)];
+  client.setInterval(() => {
+    client.user.setPresence({
+      game: {
+        name: activity.text,
+        type: activity.type
+      }
+    });
   .then(console.log)
   .catch(console.error);
 });
