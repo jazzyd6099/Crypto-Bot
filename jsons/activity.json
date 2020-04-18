@@ -15,9 +15,13 @@
 		"type": "PLAYING"
   },
   {
-		"text": "To Elliott talk",
+		"text": "Elliott talk",
 		"type": "LISTENING"
   },
+ {
+	 "text": "Animal Crossing New Horizons",
+	 "type": "PLAYING"
+ },
   {
 		"text": "Coding.",
 		"type": "PLAYING"
