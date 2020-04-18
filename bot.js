@@ -30,6 +30,7 @@ client.on("message", (message) => {
 	} else
 		if (message.content.startsWith("hi crypto")) {
 			message.channel.send("Hi.");
+		}
 	      });
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
