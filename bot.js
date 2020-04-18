@@ -96,7 +96,7 @@ client.on("message", (message) => {
 client.on("message", async (message) => {
 	 if (!message.content.startsWith(prefix)) return;
 	
-  if (message.content.startsWith(prefix+"poll"
+  if (message.content.startsWith(prefix+"poll")) {
 		   let pollText = args.join(` `);
       
                 if (!pollText) return funcs.send(`You did not specify any text to put into your poll.`);
