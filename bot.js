@@ -57,6 +57,9 @@ client.on("message", (message) => {
 				  }
 		    });
 	client.on("message", (message) => {
+		if message.content.incluses("!can i hold your hand")) {
+			message.reply("No.");
+		} else
 		if (message.content.includes("need my commands? Okay, here they are.")) {
 			message.channel.send({embed: {
 				color: 13101459,
@@ -76,7 +79,7 @@ client.on("message", (message) => {
 					 },
 					 {
 						 name: "**User**",
-						 value: "?userinfo"
+						 value: "?userinfo, ?avatar"
 					 }
 					 ],
 				}});
