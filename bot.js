@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
-
+module.exports.run = async (bot, message, args, funcs, con) => {
+	
 	client.on('warn', err => console.warn('[WARNING]', err));
 
 client.on('error', err => console.error('[ERROR]', err));
@@ -62,7 +63,6 @@ client.on("message", (message) => {
 						message.reply("Hey.");
 		}
 	      });
-exports.run = (client, message, args) => {
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
 	
@@ -84,14 +84,6 @@ client.on("message", (message) => {
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 		    } else
-			    if (message.content.startsWith(prefix+"embed")) {
-				    const word = args.join(" ")
-				     if (word < 1) return message.channel.send("Didn't provide any text to embed")
- 				 const embed = new Discord.MessageEmbed()
-   				 .setDescription(word)
-    				.setColor(0x00A2E8);
- 				 message.channel.send({embed});
-			    } else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author;
     				var embed = new Discord.MessageEmbed()
@@ -101,6 +93,31 @@ client.on("message", (message) => {
 				    message.channel.send({embed})
 				  }
 		    });
+client.on("message", async (message) => {
+	 if (!message.content.startsWith(prefix)) return;
+	
+  if (message.content.startsWith(prefix+"poll"
+		   let pollText = args.join(` `);
+      
+                if (!pollText) return funcs.send(`You did not specify any text to put into your poll.`);
+                pollText = pollText.substr(0, 1000);
+                const embed = new Discord.MessageEmbed()
+                    .setAuthor(message.author.tag, message.author.avatarURL)
+                    .setColor(funcs.rc())
+                    .setFooter(client.user.username)
+                    .setTitle(`Poll Started!`)
+                    .setDescription(pollText)
+                    .addField(`Started by:`, message.author.tag)
+                    .setThumbnail(message.author.avatarURL);
+                message.channel.send(embed).then(m => {
+                    m.react("✅");
+                    m.react("🤷");
+                    m.react("❌");
+                }).catch(() => { });
+                message.delete().catch(() => { });
+            });
+				 
+				 });
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
