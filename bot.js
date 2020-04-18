@@ -50,6 +50,9 @@ client.on("message", (message) => {
 	    if (message.content.startsWith(prefix+"userinfo")) {
 		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	    } else
+		    if (message.content.startsWith(prefix+"roll")) {
+			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
+		    } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 		    } else
