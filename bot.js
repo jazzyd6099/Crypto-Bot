@@ -12,7 +12,7 @@ var x = [
 
 var output = x[Math.floor(Math.random()*x.length)];
 
-var names = 
+var names = [
 	"Gay.",
 	"Bi.",
 	"An idiot.",
