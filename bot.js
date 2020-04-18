@@ -98,7 +98,7 @@ client.on("message", (message) => {
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
 		    let user = message.mentions.users.first() || message.author;
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
