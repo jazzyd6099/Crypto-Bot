@@ -4,15 +4,15 @@
   },
   {
     "text": "Something.",
-    "type": "Playing"
+    "type": "PLAYING"
   },
   {
     "text": "With my drone.",
-    "type": "Playing"
+    "type": "PLAYING"
   },
   {
 		"text": "Apex Legends",
-		"type": "Playing"
+		"type": "PLAYING"
   },
   {
 		"text": "To Elliott talk",
