@@ -92,21 +92,21 @@ client.on("message", (message) => {
 client.on("message.", async (message) => {
 	if (!message.content.startsWith(prefix)) return;
 	
+	const emojiList = ['✅','❎'];
+	
 	if(message.content.startsWith(prefix+"poll")) {
-	if (!args[0]) return message.channel.send("Proper Usage: (prefix)poll question");
-	
-	const embed = new Discord.MessageEmbed()
-	.setColor(13101459)
-	.setFooter('React to vote.')
-	.setDescription(args.join(' '))
-	.setTitle('Poll Created By ${message.author.username}');
-	
-	let message = await message.channel.send(embed);
-	
-	await message.react(':regional_indicator_y:');
-	await message.react(':regional_indicator_n:');
-	
-	message.delete({timeout: 1000});
+ 	args.shift()
+        var time = args.shift()
+        var question = args.join(' ')
+    
+        var embed = new Discord.RichEmbed()
+        .setColor(color)
+        .setTitle(question)
+        .setAuthor(message.member.user.tag, message.member.user.avatarURL)
+        .setDescription("*Ends in "+time+" minutes*")
+
+        message.channel.send(embed)
+        .then(message => reactionpoll.run(uuidv1(), time, ['Yes', 'No'], message, embed, emojiList, true))
 	
 }});
 	client.on("message", (message) => {
