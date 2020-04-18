@@ -26,10 +26,16 @@ client.on("ready", () => {
 });
 client.on("message", (message) => {
 	if (message.content.startsWith("Hey Crypto")) {
-		message.channel.send("Hello.");
+		message.reply("Hello.");
 	} else
 		if (message.content.startsWith("hi crypto")) {
-			message.channel.send("Hi.");
+			message.reply("Hi.");
+		} else
+			if (message.content.startsWith("helllo crypto")) {
+				message.reply("Hey.");
+			} else
+				if (message.content.startsWith("Hello Crypto!")) {
+				      message.reply("Hello.");
 		}
 	      });
 client.on("message", (message) => {
