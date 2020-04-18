@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
-const embed = new Discord.RichEmbed()
 
 //embedColors
 
@@ -50,11 +49,10 @@ client.on("message", (message) => {
 		    } else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author;
- 				   const avatarEmbed = new Discord.RichEmbed()
-   				     .setColor(0x333333)
-    				    .setAuthor(user.username)
-     				   .setImage(user.avatarURL);
-   				 message.channel.send(avatarEmbed);
+    				   const embed = new Discord.RichEmbed()
+     			             .setImage(user.displayAvatarURL)
+       				     .setColor(0x00A2E8)
+				    message.channel.send({embed})
 				  }
 		    }
 		    });
