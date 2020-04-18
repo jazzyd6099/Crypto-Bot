@@ -137,7 +137,7 @@ client.on("message", (message) => {
 				},
 					 {
 						 name: "**Cryptage/Interactions**",
-						 value: "?roll"
+						 value: "?roll, ?whatami"
 					 },
 					 {
 						 name: "**User**",
