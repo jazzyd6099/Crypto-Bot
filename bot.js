@@ -76,7 +76,10 @@ client.on("message", (message) => {
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
-		    } else
+		    } else		    
+			if (message.content.startsWith(prefix+"poll")) {
+ 				message.reply("Currently WIP. Hopefully will be made soon.");
+			} else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 		    } else
@@ -91,9 +94,6 @@ client.on("message", (message) => {
 		    });
 client.on("message.", async (message) => {
 	if (!message.content.startsWith(prefix)) return;
-
-	if (message.content.startsWith(prefix+"poll")) {
- 		message.reply("Currently WIP. Hopefully soon.");
 	
 }});
 	client.on("message", (message) => {
