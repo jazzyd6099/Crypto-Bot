@@ -46,6 +46,13 @@ client.on("message", (message) => {
 	    } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
+		    } else
+			    if (message.content.startsWith(prefix+"avatar")) {
+			  let user = message.mentions.users.first() || message.author
+   				   const embed = new Discord.RichEmbed()
+       				     .setImage(user.displayAvatarURL)
+				    .setColor(13101459)
+				   message.channel.send({embed})
 		    }
 		    });
 	client.on("message", (message) => {
