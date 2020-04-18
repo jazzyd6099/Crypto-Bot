@@ -46,6 +46,7 @@ client.on("message", (message) => {
 	    } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
+		    }
 		    });
 	client.on("message", (message) => {
 		if (message.content.includes("need my commands? Okay, here they are.")) {
