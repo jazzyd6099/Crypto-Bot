@@ -49,10 +49,12 @@ client.on("message", (message) => {
 		    } else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author
-   				   const embed = new Discord.RichEmbed()
-       				     .setImage(user.displayAvatarURL)
-				    .setColor(13101459)
-				   message.channel.send({embed})
+			  message.channel.send({embed: {
+				  color: 13101459,
+				  image: {
+					 (user.displayAvatarURL)
+				  }
+			  }});
 		    }
 		    });
 	client.on("message", (message) => {
