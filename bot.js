@@ -2,12 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
 
-            const activities = {
-                PLAYING: 'Playing',
-                STREAMING: 'Streaming',
-                WATCHING: 'Watching',
-                LISTENING: 'Listening to'
-	    };
 		    
 var x = [
     1,
@@ -95,7 +89,6 @@ client.on("message", (message) => {
 	      });
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
-	module.exports.run = async (bot, message, args, funcs) => {
 	
   if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("pong.");
