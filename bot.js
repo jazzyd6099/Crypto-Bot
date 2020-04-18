@@ -104,9 +104,6 @@ client.on("message", (message) => {
 		    } else		    
 			if (message.content.startsWith(prefix+"poll")) {
  				message.reply("Currently WIP. Hopefully will be made soon.");
-			} else
-				if (message.content.startsWith(prefix+"i love you")) {
-					message.react('👎');
 				} else
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
@@ -135,6 +132,9 @@ client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
 		} else
+			if (message.content.includes("love you crypto")) {
+					message.react('👎');
+			} else
 		if (message.content.includes("need my commands? Okay, here they are.")) {
 			message.channel.send({embed: {
 				color: 13101459,
