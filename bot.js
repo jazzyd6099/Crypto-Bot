@@ -64,7 +64,7 @@ client.on("ready", () => {
   console.log("I am ready.");
 	  
 const activity = activities[Math.floor(Math.random() * activities.length)];
-client.user.setPresence({ activity: { name: activity.text }, status: 'idle' })
+client.user.setPresence({ activity: { name: activity.text, type: activity.type }, status: 'idle' })
 	   .then(console.log)
   .catch(console.error);
 });
