@@ -95,7 +95,7 @@ client.on("message", (message) => {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
 	    } else
 		        if (message.content.startsWith(prefix+"userinfo")) {
-    			    const embed = new Dicord.MessageEmbed()
+    			    const embed = new Discord.MessageEmbed()
            			 .setColor(13101459)
            			 .setTitle('Server Member Info')
            			 .addField('**__Info:__**', `Online users: ${message.guild.members.filter(m => m.presence.status == "online").size}\nOffline users: ${message.guild.members.filter(m => m.presence.status == "offline").size}\nTotal Users: ${message.guild.members.size}\nTotal Bots: ${message.guild.members.filter(m => m.user.client == true).size}`)
