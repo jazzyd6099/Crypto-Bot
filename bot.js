@@ -83,6 +83,14 @@ client.on("message", (message) => {
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 		    } else
+			    if (message.content.startsWith(prefix+"embed")) {
+				    const word = args.join(" ")
+				     if (word < 1) return message.channel.send("Didn't provide any text to embed")
+ 				 const embed = new Discord.MessageEmbed()
+   				 .setDescription(word)
+    				.setColor(0x00A2E8);
+ 				 message.channel.send({embed});
+			    } else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author;
     				var embed = new Discord.MessageEmbed()
