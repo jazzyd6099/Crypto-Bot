@@ -107,14 +107,7 @@ client.on("message", (message) => {
 		    let user = message.mentions.members.first();
 		    
 		if(message.mentions.users.size < 1) return message.reply("Mention someone so I can get information about them.");
-		    const member = await message.channel.guild.members.get(user.id);
-		      let embed = new Discord.MessageEmbed()
-        	    .setColor(13101459)
-       	           .setTitle('User info')
-       	           .addField('**__Basic Info:__**', `Username: ${user.user.tag}\nUser Nickname: ${member.displayName}\nUser ID: ${user.id}`)
-     	          .addField('**__Activites:__**',  `Status: ${member.presence !== null && member.presence.status !== null ? member.presence.status : "Offline"}\nPlaying: ${member.presence.game !== null ? member.presence.game.name : `None`}`)
-    	          .addField('**__Dates:__**', `Guild join date: ${user.joinedAt.toDateString()}\nDiscord join date: ${user.user.createdAt.toDateString()}`)
- 		       message.channel.send(embed);
+		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
