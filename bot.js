@@ -99,8 +99,8 @@ client.on("message.", async (message) => {
         var time = args.shift()
         var question = args.join(' ')
     
-        var embed = new Discord.RichEmbed()
-        .setColor(color)
+        var embed = new Discord.MessageEmbed()
+        .setColor(13101459)
         .setTitle(question)
         .setAuthor(message.member.user.tag, message.member.user.avatarURL)
         .setDescription("*Ends in "+time+" minutes*")
