@@ -105,8 +105,8 @@ client.on("message", (message) => {
 			if (message.content.startsWith(prefix+"poll")) {
  				message.reply("Currently WIP. Hopefully will be made soon.");
 			} else
-				if (message.content.startsWith(prefix+"react")) {
-					message.react('🍎');
+				if (message.content.startsWith(prefix+"i love you")) {
+					message.react(':thumbsdown:');
 				} else
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
