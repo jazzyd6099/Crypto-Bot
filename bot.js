@@ -92,7 +92,7 @@ client.on("message", (message) => {
 client.on("message.", async (message) => {
 	if (!message.content.startsWith(prefix)) return;
 
-	if(message.content.startsWith(prefix+"poll")) {
+	if (message.content.startsWith(prefix+"poll")) {
  		message.reply("Currently WIP. Hopefully soon.");
 	
 }});
