@@ -1,6 +1,16 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
+
+var x = [
+    1,
+    2,
+    3,
+    4,
+    5,
+]
+
+var output = x[Math.floor(Math.random()*x.length)];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
 
