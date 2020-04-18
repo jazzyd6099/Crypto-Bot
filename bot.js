@@ -1,9 +1,28 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
-async function declaredAsAsync() {
-exports.run = async (client, message, args) => {
 
+	client.on('warn', err => console.warn('[WARNING]', err));
+
+client.on('error', err => console.error('[ERROR]', err));
+
+client.on('uncaughtException', (err) => {
+    console.log("Uncaught Exception: " + err)
+    process.exit(1)
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('[FATAL] Possibly Unhandled Rejection at: Promise ', promise, ' reason: ', reason.message);
+});
+
+client.on('disconnect', () => {
+  console.warn('Disconnected!')
+  process.exit(0);
+})
+
+client.on('reconnecting', () => console.warn('Reconnecting...'))
+	
+	
 //embedColors
 
 const embedRed = 0xff0000
