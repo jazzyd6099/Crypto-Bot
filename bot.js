@@ -2,6 +2,13 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
 
+            const activities = {
+                PLAYING: 'Playing',
+                STREAMING: 'Streaming',
+                WATCHING: 'Watching',
+                LISTENING: 'Listening to'
+	    };
+		    
 var x = [
     1,
     2,
@@ -88,6 +95,7 @@ client.on("message", (message) => {
 	      });
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
+	module.exports.run = async (bot, message, args, funcs) => {
 	
   if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("pong.");
@@ -96,7 +104,16 @@ client.on("message", (message) => {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		    let user = message.mentions.members.first();
+		    if (!user) return funcs.send(`Please mention somebody to get information about them.`);
+		    const member = await message.channel.guild.members.get(user.id);
+		      let embed = new Discord.MessageEmbed()
+        	    .setColor(13101459)
+       	           .setTitle('User info')
+       	           .addField('**__Basic Info:__**', `Username: ${user.user.tag}\nUser Nickname: ${member.displayName}\nUser ID: ${user.id}`)
+     	          .addField('**__Activites:__**',  `Status: ${member.presence !== null && member.presence.status !== null ? member.presence.status : "Offline"}\nPlaying: ${member.presence.game !== null ? member.presence.game.name : `None`}`)
+    	          .addField('**__Dates:__**', `Guild join date: ${user.joinedAt.toDateString()}\nDiscord join date: ${user.user.createdAt.toDateString()}`)
+ 		       message.channel.send(embed);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
