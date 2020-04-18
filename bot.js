@@ -24,7 +24,13 @@ client.on("ready", () => {
   .then(console.log)
   .catch(console.error);
 });
-
+client.on("message", (message) => {
+	if (message.content.startsWith("Hey Crypto")) {
+		message.channel.send("Hello.");
+	} else
+		if (message.content.startsWith("hi crypto")) {
+			message.channel.send("Hi.");
+	      });
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
 	
@@ -36,6 +42,34 @@ client.on("message", (message) => {
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
 		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+	    } else
+		    if (message.content.startsWith(prefix+"help")) {
+			    message.author.send("You need my commands? Okay, here they are.");
+		    });
+	client.on("message", (message) => {
+		if (message.content.includes("need my commands? Okay, here they are.")) {
+			message.channel.send({embed: {
+				color: 13101459,
+				title: "My Commands",
+				description: "These are my commands. There will be more to come. My prefix is self explanatory.",
+				author: {
+					name: "Crypto",
+					icon_url: "https://i.postimg.cc/RCnXZHqy/cryptooooo.png"
+				},
+				fields: [{
+					name: "**Server**",
+					value: "?serverinfo"
+				},
+					 {
+						 name: "**Cryptage/Interactions**",
+						 value: "WIP"
+					 },
+					 {
+						 name: "**User**",
+						 value: "?userinfo"
+					 }
+					 ],
+				}});
   }
 });
 
