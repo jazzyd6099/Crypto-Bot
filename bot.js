@@ -78,7 +78,6 @@ client.on("ready", () => {
   console.log("I am ready.");
 	  
 const activity = activities[Math.floor(Math.random() * activities.length)];
-  client.setInterval(() => {
     client.user.setPresence({
       game: {
         name: activity.text,
