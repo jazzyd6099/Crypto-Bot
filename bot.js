@@ -93,14 +93,10 @@ client.on("message", (message) => {
   } else
     if (message.content.startsWith(prefix + "serverinfo")) {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
-	    } else
-		        if (message.content.startsWith(prefix+"userinfo")) {
-    			    const embed = new Discord.MessageEmbed()
-           			 .setColor(13101459)
-           			 .setTitle('Server Member Info')
-           			 .addField('**__Info:__**', `Online users: ${message.guild.members.filter(m => m.presence.status == "online").size}\nOffline users: ${message.guild.members.filter(m => m.presence.status == "offline").size}\nTotal Users: ${message.guild.members.size}\nTotal Bots: ${message.guild.members.filter(m => m.user.client == true).size}`)
-      					  message.channel.send(embed);
-				  } else
+	} else
+			if (message.content.startsWith(prefix+"userinfo")) {
+			message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
+	} else
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
 		    } else		    
