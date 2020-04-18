@@ -70,7 +70,7 @@ client.on("message", (message) => {
 				    message.channel.send({embed})
 				  }
 		    });
-client.on("message.", async message) => {
+client.on("message.", async message => {
 	if (!message.content.startsWith(prefix)) return;
 	
 	if(message.content.startsWith(prefix+"poll")) {
