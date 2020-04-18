@@ -110,7 +110,7 @@ client.on("message", (message) => {
 				if (message.content.startsWith(prefix+"whatami")) {
 						var embed = new Discord.MessageEmbed()
 							.setColor(13101459)
-							.setTitle("**You are..**")
+							.setTitle("**This user is..**")
 							.setDescription(names[Math.floor(Math.random() * names.length)])
 							.setThumbnail(message.author.displayAvatarURL())
 								message.channel.send({embed})
