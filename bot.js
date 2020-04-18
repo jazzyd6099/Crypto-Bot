@@ -56,7 +56,6 @@ client.on("message", (message) => {
      				   .setImage(user.avatarURL);
    				 message.channel.send(avatarEmbed);
 				  }
-			  }});
 		    }
 		    });
 	client.on("message", (message) => {
