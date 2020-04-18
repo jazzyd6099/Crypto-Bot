@@ -79,10 +79,12 @@ client.on("ready", () => {
 	  
 const activity = activities[Math.floor(Math.random() * activities.length)];
     client.user.setPresence({
-      game: {
+      activity: {
         name: activity.text,
         type: activity.type
       }
+	   .then(console.log)
+  .catch(console.error);
 });
 client.on("message", (message) => {
 	if (message.content.startsWith("Hey Crypto")) {
