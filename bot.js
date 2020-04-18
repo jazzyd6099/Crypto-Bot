@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
 const declaredAsAsync = async () => {
-exports.run = async (client, message, args, tools) = >
+exports.run = async (client, message, args, tools) =>
+
 //embedColors
 
 const embedRed = 0xff0000
