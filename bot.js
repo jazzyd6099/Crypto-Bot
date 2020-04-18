@@ -23,6 +23,7 @@ var names = [
 	"Someone that has small dick energy.",
 	"A person, duh.",
 	"One of Elliott's decoys.",
+	"",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
@@ -107,11 +108,12 @@ client.on("message", (message) => {
 					message.reply("I don't think so.");
 				} else
 				if (message.content.startsWith(prefix+"whatami")) {
-						message.channel.send({embed: {
-							color: 13101459,
-							title: "You are..",
-							description: (names[Math.floor(Math.random() * names.length)]),
-						}});
+						var embed = new Discord.MessageEmbed()
+							.setColor(13101459)
+							.setTitle("**You are..**")
+							.setDescription(names[Math.floor(Math.random() * names.length)])
+							.setThumbnail(message.author.displayAvatarURL())
+								message.channel.send({embed})
 								     } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
