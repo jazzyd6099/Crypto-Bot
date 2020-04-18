@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
-
+const declaredAsAsync = async () => {
+exports.run = async (client, message, args, tools) = >
 //embedColors
 
 const embedRed = 0xff0000
@@ -71,6 +72,7 @@ client.on("message", (message) => {
 client.on("message.", (message) => {
 	if (!message.content.startsWith(prefix)) return;
 	
+	if(message.content.startsWith(prefix+"poll")) {
 	if (!args[0]) return message.channel.send("Proper Usage: (prefix)poll question");
 	
 	const embed = new Discord.MessageEmbed()
