@@ -97,6 +97,7 @@ client.on("message", (message) => {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
     } else
 	    if (message.content.startsWith(prefix+"userinfo")) {
+		    let user = message.mentions.users.first() || message.author;
 		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	    } else
 		    if (message.content.startsWith(prefix+"roll")) {
@@ -135,6 +136,9 @@ client.on("message", (message) => {
 			if (message.content.includes("love you crypto")) {
 					message.react('👎');
 			} else
+				if (message.content.includes("love crypto")) {
+					message.react('👎');
+				} else
 		if (message.content.includes("need my commands? Okay, here they are.")) {
 			message.channel.send({embed: {
 				color: 13101459,
