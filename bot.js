@@ -84,7 +84,7 @@ client.on("message", (message) => {
 				},
 					 {
 						 name: "**Cryptage/Interactions**",
-						 value: "WIP"
+						 value: "?roll"
 					 },
 					 {
 						 name: "**User**",
