@@ -14,8 +14,5 @@ try {
 
 module.exports.config = {
     name: "memberinfo",
-    aliases: [""],
-    usage: "Use this command to get the guild's member information.",
-    commandCategory: "info",
-    cooldownTime: "5"
+    usage: "Use this command to get server member information.",
 };
