@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "?"
+exports.run = async (client, message, args, tools) =>
 
 //embedColors
 
@@ -36,6 +37,9 @@ client.on("message", (message) => {
 			} else
 				if (message.content.startsWith("Hello Crypto!")) {
 				      message.reply("Hello.");
+				} else
+					if (message.content.startsWith("Hi Crypto")) {
+						message.reply("Hey.");
 		}
 	      });
 client.on("message", (message) => {
@@ -65,6 +69,25 @@ client.on("message", (message) => {
 				    message.channel.send({embed})
 				  }
 		    });
+client.on("message.", (message) => {
+	if (!message.content.startsWith(prefix)) return;
+	
+	if (!args[0]) return message.channel.send("Proper Usage: (prefix)poll question");
+	
+	const embed = new Discord.MessageEmbed()
+	.setColor(13101459)
+	.setFooter('React to vote.')
+	.setDescription(args.join(' '))
+	.setTitle('Poll Created By ${message.author.username}');
+	
+	let message = await message.channel.send(embed);
+	
+	await message.react(':regional_indicator_y:');
+	await message.react(':regional_indicator_n:');
+	
+	message.delete({timeout: 1000});
+	
+});
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
