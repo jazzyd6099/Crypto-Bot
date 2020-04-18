@@ -70,7 +70,7 @@ client.on("message", (message) => {
 				    message.channel.send({embed})
 				  }
 		    });
-client.on("message.", async message => {
+client.on("message.", async (message) => {
 	if (!message.content.startsWith(prefix)) return;
 	
 	if(message.content.startsWith(prefix+"poll")) {
@@ -89,7 +89,7 @@ client.on("message.", async message => {
 	
 	message.delete({timeout: 1000});
 	
-};
+});
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
