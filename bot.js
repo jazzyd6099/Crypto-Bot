@@ -12,10 +12,17 @@ var x = [
 
 var output = x[Math.floor(Math.random()*x.length)];
 
-var names = [
+var names = 
 	"Gay.",
 	"Bi.",
 	"An idiot.",
+	"Someone that has big dick energy.",
+	"Straight.",
+	"Someone that I could maybe trust. Likely not.",
+	"Pan.",
+	"Someone that has small dick energy.",
+	"A person, duh.",
+	"One of Elliott's decoys.",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
@@ -137,7 +144,7 @@ client.on("message", (message) => {
 				},
 					 {
 						 name: "**Cryptage/Interactions**",
-						 value: "?roll, ?whatami"
+						 value: "?roll, ?do you love me, ?whatami"
 					 },
 					 {
 						 name: "**User**",
