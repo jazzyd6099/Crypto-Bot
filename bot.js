@@ -91,22 +91,9 @@ client.on("message", (message) => {
 		    });
 client.on("message.", async (message) => {
 	if (!message.content.startsWith(prefix)) return;
-	
-	const emojiList = ['✅','❎'];
-	
-	if(message.content.startsWith(prefix+"poll")) {
- 	args.shift()
-        var time = args.shift()
-        var question = args.join(' ')
-    
-        var embed = new Discord.MessageEmbed()
-        .setColor(13101459)
-        .setTitle(question)
-        .setAuthor(message.member.user.tag, message.member.user.avatarURL)
-        .setDescription("*Ends in "+time+" minutes*")
 
-        message.channel.send(embed)
-        .then(message => reactionpoll.run(uuidv1(), time, ['Yes', 'No'], message, embed, emojiList, true))
+	if(message.content.startsWith(prefix+"poll")) {
+ 		message.reply("Currently WIP. Hopefully soon.");
 	
 }});
 	client.on("message", (message) => {
