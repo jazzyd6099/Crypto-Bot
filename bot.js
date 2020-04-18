@@ -62,6 +62,7 @@ client.on("message", (message) => {
 						message.reply("Hey.");
 		}
 	      });
+exports.run = (client, message, args) => {
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
 	
