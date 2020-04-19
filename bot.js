@@ -136,30 +136,6 @@ client.on("message", (message) => {
 				  });
 				    }
 		    });
-client.on("message", async (message) => {
-	 if (!message.content.startsWith(prefix)) return;
-	
-	if(message.content.startsWith(prefix+"polltest")) {
-		module.exports.run = async (bot, message, args, funcs, con) => {
-		  let pollText = args.join(` `);
-                if (!pollText) return funcs.send(`You did not specify any text to put into your poll.`);
-                pollText = pollText.substr(0, 1000);
-		 const embed = new Discord.MessageEmbed()
-                    .setAuthor(message.author.tag, message.author.avatarURL)
-                    .setColor(13101459)
-                    .setFooter(client.user.username)
-                    .setTitle(`Poll Started`)
-                    .setDescription(pollText)
-                    .addField(`Started by:`, message.author.tag)
-                    .setThumbnail(message.author.avatarURL);
-                message.channel.send(embed).then(message => {
-                    message.react("✅");
-                    message.react("🤷");
-                    message.react("❌");
-                }).catch(() => { });
-                message.delete().catch(() => { });
-		});
-        });
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
