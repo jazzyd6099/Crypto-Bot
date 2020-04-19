@@ -28,6 +28,7 @@ var output = x[Math.floor(Math.random()*x.length)];
 var names = [
 	"Gay.",
 	"Bi.",
+	"Lesbian.",
 	"An idiot.",
 	"Someone that has big dick energy.",
 	"Straight.",
