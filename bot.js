@@ -41,10 +41,10 @@ var names = [
 	"A trash can.",
 	"A gay arsonist.",
 	"A furry.",
-	"Is gay for girls.",
+	"Gay for girls.",
 	"Not a furry.",
 	"Mwister Obwama",
-	"Is gay for boys.",
+	"Gay for boys.",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
