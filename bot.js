@@ -37,6 +37,12 @@ var names = [
 	"A person, duh.",
 	"One of Elliott's decoys.",
 	"A lizard.",
+	"Crying.".
+	"A trash can.",
+	"A gay arsonist.",
+	"A furry.",
+	"Is gay for girls.",
+	"Not a furry.",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
