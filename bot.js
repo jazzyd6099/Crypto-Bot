@@ -37,7 +37,7 @@ var names = [
 	"A person, duh.",
 	"One of Elliott's decoys.",
 	"A lizard.",
-	"Crying.".
+	"Crying.",
 	"A trash can.",
 	"A gay arsonist.",
 	"A furry.",
