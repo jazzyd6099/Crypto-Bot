@@ -43,6 +43,8 @@ var names = [
 	"A furry.",
 	"Is gay for girls.",
 	"Not a furry.",
+	"Mwister Obwama",
+	"Is gay for boys.",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
