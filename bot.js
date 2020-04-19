@@ -112,6 +112,8 @@ client.on("message", (message) => {
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
+					if (message.content.startsWith(prefix+"bullybones")) {
+						message.channel.send("socialism for the rich and capitalism for the poor");
 				if (message.content.startsWith(prefix+"whatami")) {
 						var embed = new Discord.MessageEmbed()
 							.setColor(13101459)
