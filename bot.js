@@ -36,7 +36,7 @@ var names = [
 	"Someone that has small dick energy.",
 	"A person, duh.",
 	"One of Elliott's decoys.",
-	"",
+	"A lizard.",
 	];
 	
 	client.on('warn', err => console.warn('[WARNING]', err));
