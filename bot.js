@@ -152,12 +152,13 @@ client.on("message", async (message) => {
                     .setDescription(pollText)
                     .addField(`Started by:`, message.author.tag)
                     .setThumbnail(message.author.avatarURL);
-                message.channel.send(embed).then(m => {
-                    m.react("✅");
-                    m.react("🤷");
-                    m.react("❌");
+                message.channel.send(embed).then(message => {
+                    message.react("✅");
+                    message.react("🤷");
+                    message.react("❌");
                 }).catch(() => { });
                 message.delete().catch(() => { });
+		});
         });
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
