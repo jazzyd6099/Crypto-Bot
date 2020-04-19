@@ -2,6 +2,7 @@ const fs = require('fs');
 const Discord = require("discord.js");
 const { prefix } = require('./config.json');
 const activities = require('./jsons/activity');
+const pollEmbed = require('discord.js-poll-embed');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
