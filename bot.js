@@ -3,8 +3,6 @@ const Discord = require("discord.js");
 const { prefix } = require('./config.json');
 const activities = require('./jsons/activity');
 
-client.config = config;
-
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
