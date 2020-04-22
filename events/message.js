@@ -1,6 +1,5 @@
-module.exports = (client, message) => {
-  
- if (message.content.indexOf(client.config.prefix) !== 0) return;
+module.exports = async (client, message) => {
+
   
     const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
