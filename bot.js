@@ -44,7 +44,6 @@ var names = [
 	"A furry.",
 	"Gay for girls.",
 	"Not a furry.",
-	"Mwister Obwama",
 	"Gay for boys.",
 	];
 	
