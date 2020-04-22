@@ -111,7 +111,6 @@ client.on("message", (message) => {
 		if (message.content.startsWith(prefix+"ping")) {
 		message.channel.send("pong.");
 	} else
-
     if (message.content.startsWith(prefix + "serverinfo")) {
 	message.channel.send("Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount");
 	} else
