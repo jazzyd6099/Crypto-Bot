@@ -4,4 +4,3 @@ const config = require("./config.json");
 const prefix = "?"
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
-const Enmap = require("enmap");
