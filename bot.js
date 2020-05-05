@@ -151,7 +151,6 @@ client.on("message", (message) => {
                     m.react("❌");
                 }).catch(() => { });
                 message.delete().catch(() => { });
-            });
 });
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
