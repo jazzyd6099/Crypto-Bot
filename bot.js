@@ -135,9 +135,7 @@ exports.run = (client, message, args) => {
               				      m.react("❌");
             				    }).catch(() => { });
                				 message.delete().catch(() => { });
-			    });
-});
-			} else
+			    } else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author;
     				var embed = new Discord.MessageEmbed()
