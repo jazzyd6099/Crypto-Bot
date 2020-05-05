@@ -120,29 +120,6 @@ exports.run = (client, message, args) => {
 								     } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
-		    } else
-			    if (message.content.startsWith(prefix+"poll")) {
-				let pollText = args.join(` `);
-				     if(pollText.size < 1) return message.reply("You did not specify any text to put into your poll.");
-				    pollText = pollText.substr(0, 1000);
-				    var embed = new Discord.MessageEmbed()
-				    .setColor(13101459)
-				    .setTitle("Poll Started.")
-				    .setDescription(pollText)
-				    message.channel.send(embed).then(m => {
-					      m.react("✅");
-              				      m.react("🤷");
-              				      m.react("❌");
-            				    }).catch(() => { });
-               				 message.delete().catch(() => { });
-			    } else
-			    if (message.content.startsWith(prefix+"avatar")) {
-			  let user = message.mentions.users.first() || message.author;
-    				var embed = new Discord.MessageEmbed()
-			             .setAuthor(user.username)
-     			             .setImage(user.displayAvatarURL())
-       				     .setColor(13101459)
-				    message.channel.send({embed})
 			    } else
 				    if (message.content.startsWith(prefix+"reactawait")) {
 					   message.react('👍').then(() => message.react('👎'));
