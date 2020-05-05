@@ -143,9 +143,6 @@ client.on("message", (message) => {
 				} else
 					if (message.content.includes("crypto i love you")) {
 						message.react('👎');
-					} else
-						if(message.content.includes("bullylen")) {
-							message.channel.send("succ");
 						} else
 		if (message.content.includes("need my commands? Okay, here they are.")) {
 			message.channel.send({embed: {
