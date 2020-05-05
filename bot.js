@@ -136,6 +136,7 @@ exports.run = (client, message, args) => {
             				    }).catch(() => { });
                				 message.delete().catch(() => { });
 			    });
+});
 			} else
 			    if (message.content.startsWith(prefix+"avatar")) {
 			  let user = message.mentions.users.first() || message.author;
