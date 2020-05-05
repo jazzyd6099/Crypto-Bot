@@ -87,7 +87,6 @@ client.on("message", (message) => {
 	      });
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
-exports.run = (client, message, args) => {
 	
 	if (message.content.startsWith(prefix+"ping")) {
 	message.channel.send("pong.");
