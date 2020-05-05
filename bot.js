@@ -100,9 +100,6 @@ client.on("message", (message) => {
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
 				} else
-					if (message.content.startsWith(prefix+"poll")) {
-					pollEmbed(msg, title, options, timeout, emojiList, forceEndPollEmoji);
-					} else
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
