@@ -137,7 +137,7 @@ client.on("message", (message) => {
 		 let pollText = args.join(" ");
                 if (!pollText) return message.reply("You did not specify any text to put into your poll.");
                 pollText = pollText.substr(0, 1000);
-		   const embed = new RichEmbed()
+		   var embed = new Discord.MessageEmbed()
                     .setAuthor(message.author.tag, message.author.avatarURL)
                     .setColor(13101459)
                     .setTitle("Poll Started.")
