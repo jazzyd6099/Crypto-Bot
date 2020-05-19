@@ -18,19 +18,19 @@ var x = [
 var output = x[Math.floor(Math.random()*x.length)];
 
 var legends = [
-	"Lifeline"
-	"Gibraltar"
-	"Mirage"
-	"Crypto"
-	"Revenant"
-	"Loba"
-	"Pathfinder"
-	"Wraith"
-	"BloodHound"
-	"Octane"
-	"Crypto"
-	"Wattson"
-	"Caustic"
+	"Lifeline",
+	"Gibraltar",
+	"Mirage",
+	"Crypto",
+	"Revenant",
+	"Loba",
+	"Pathfinder",
+	"Wraith",
+	"BloodHound",
+	"Octane",
+	"Crypto",
+	"Wattson",
+	"Caustic",
 	];
 
 var names = [
