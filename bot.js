@@ -17,6 +17,22 @@ var x = [
 
 var output = x[Math.floor(Math.random()*x.length)];
 
+var legends = [
+	"Lifeline"
+	"Gibraltar"
+	"Mirage"
+	"Crypto"
+	"Revenant"
+	"Loba"
+	"Pathfinder"
+	"Wraith"
+	"BloodHound"
+	"Octane"
+	"Crypto"
+	"Wattson"
+	"Caustic"
+	];
+
 var names = [
 	"Gay.",
 	"Bi.",
@@ -100,6 +116,13 @@ client.on("message", (message) => {
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
+					if (message.content.startsWith(prefix+"pickalegend")) {
+						var embed = new Discord.MessageEmbed()
+						.setColor(13101459)
+						.setTitle("**The legend you wanted me to pick is..**")
+						.setDescription(legends[Math.floor(Math.random() * legends.length)])
+						message.channel.send({embed})
+					} else
 				if (message.content.startsWith(prefix+"whatami")) {
 						var embed = new Discord.MessageEmbed()
 							.setColor(13101459)
