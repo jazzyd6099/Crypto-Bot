@@ -149,7 +149,7 @@ client.on("message", (message) => {
 				},
 				fields: [{
 					name: "**Server**",
-					value: "?serverinfo"
+					value: "WIP"
 				},
 					 {
 						 name: "**Cryptage/Interactions**",
