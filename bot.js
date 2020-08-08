@@ -114,7 +114,7 @@ client.on("message", (message) => {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
 				} else
 					if (message.content.startsWith(prefix+"poll")) {
-						async (client, message) => {
+						async () => {
 						let question = message.content.slice(client.prefix.length+5)
 						if(!question){
 							return message.channel.send("You did not specify a question for your poll!");
