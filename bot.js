@@ -85,23 +85,17 @@ client.user.setPresence({ activity: { name: activity.text, type: activity.type }
   .catch(console.error);
 });
 client.on('message', async message => {
-	if (message.content.startsWith("Hey Crypto")) {
+	if (message.content.toLowerCase().startsWith("Hey Crypto")) {
 		message.reply("Hello.");
 	} else
-		if (message.content.startsWith("hi crypto")) {
+		if (message.content.toLowerCase().startsWith("hi crypto")) {
 			message.reply("Hi.");
 		} else
-			if (message.content.startsWith("helllo crypto")) {
+			if (message.content.toLowerCase().startsWith("helllo crypto")) {
 				message.reply("Hey.");
-			} else
-				if (message.content.startsWith("Hello Crypto!")) {
-				      message.reply("Hello.");
-				} else
-					if (message.content.startsWith("Hi Crypto")) {
-						message.reply("Hey.");
 		}
 	      });
-client.on("message”, async(message) => {
+client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
 	if (statement.content.startsWith(prefix+"ping")) {
