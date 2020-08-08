@@ -123,6 +123,7 @@ client.on("message", (message) => {
 						.setDescription(question)
 						.setFooter("${message.author.username} created this poll.")
 						let message = await message.channel.send({embed})
+						async () => {
 						await message.react('✅')
 							await.message.react('❌')
 						} else
