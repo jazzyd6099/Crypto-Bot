@@ -84,7 +84,7 @@ client.user.setPresence({ activity: { name: activity.text, type: activity.type }
 	   .then(console.log)
   .catch(console.error);
 });
-client.on("message”, message => {
+client.on('message', async message => {
 	if (message.content.startsWith("Hey Crypto")) {
 		message.reply("Hello.");
 	} else
