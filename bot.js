@@ -123,8 +123,8 @@ client.on("message", (message) => {
 						.setDescription(question)
 						.setFooter("${message.author.username} created this poll.")
 						let message = await message.channel.send({embed})
-						await message.react('✅')
-							await.message.react('❌')
+							await message.react('✅')
+							await message.react('❌')
 						} else
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
