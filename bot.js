@@ -101,7 +101,7 @@ client.on("message", (message) => {
 						message.reply("Hey.");
 		}
 	      });
-client.on("message", (message) => {
+client.on("message”, async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
 	if (message.content.startsWith(prefix+"ping")) {
