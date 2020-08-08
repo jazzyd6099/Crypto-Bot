@@ -113,6 +113,18 @@ client.on("message", (message) => {
 		    if (message.content.startsWith(prefix+"roll")) {
 			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
 				} else
+					if (message.content.startsWith(prefix+"poll")) {
+						let question = message.content.slice(client.prefix.length+5)
+						if(!question){
+							return message.channel.send("You did not specify a question for your poll!");
+						var embed = new Discord.MessageEmbed()
+						.setTitle("New Poll")
+						.setDescription(question)
+						.setFooter("${message.author.username} created this poll.")
+						let message = await message.channel.send({embed})
+						await message.react('✅')
+							await.message.react('❌')
+						} else
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
