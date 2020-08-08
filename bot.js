@@ -55,6 +55,7 @@ var names = [
 	"Gay for boys.",
 	];
 	
+
 	client.on('warn', err => console.warn('[WARNING]', err));
 
 client.on('error', err => console.error('[ERROR]', err));
