@@ -160,7 +160,7 @@ client.on("message", (message) => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				  });
 				    }
-		    }));
+		    }});
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
