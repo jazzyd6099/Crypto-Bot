@@ -146,6 +146,20 @@ client.on("message", (message) => {
 								     } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
+			    } else
+				    if (message.content.startsWith(prefix+"reactawait")) {
+					   message.react('👍').then(() => message.react('👎'));
+					    const filter = (reaction, user) => {
+			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+		};
+			message.awaitReactions(filter, { maxMatches: 1, time: 60000, errors: ['time'] })
+			.then(collected => {
+				const reaction = collected.first();
+			})
+			.catch(collected => {
+				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
+				  });
+				    }
 		    }});
 	client.on("message", (message) => {
 		if (message.content.includes("!can i hold your hand")) {
