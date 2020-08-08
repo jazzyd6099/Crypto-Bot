@@ -101,6 +101,7 @@ client.on("message", (message) => {
 						message.reply("Hey.");
 		}
 	      });
+async () => {
 client.on("message", (message) => {
  if (!message.content.startsWith(prefix)) return;
 	
