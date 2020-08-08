@@ -38,11 +38,11 @@ var names = [
 	"Bi.",
 	"Lesbian.",
 	"An idiot.",
-	"Someone that has big dick energy.",
+	"Someone that has interesting energy.",
 	"Straight.",
 	"Someone that I could maybe trust. Likely not.",
 	"Pan.",
-	"Someone that has small dick energy.",
+	"Someone that has nice energy.",
 	"A person, duh.",
 	"One of Elliott's decoys.",
 	"A lizard.",
@@ -84,7 +84,7 @@ client.user.setPresence({ activity: { name: activity.text, type: activity.type }
 	   .then(console.log)
   .catch(console.error);
 });
-client.on("message", (message) => {
+client.on("message”, message => {
 	if (message.content.startsWith("Hey Crypto")) {
 		message.reply("Hello.");
 	} else
@@ -104,15 +104,9 @@ client.on("message", (message) => {
 client.on("message”, async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
-	if (message.content.startsWith(prefix+"ping")) {
+	if (statement.content.startsWith(prefix+"ping")) {
 	message.channel.send("pong.");
 	} else
-			if (message.content.startsWith(prefix+"userinfo")) {
-			message.channel.send(`Username: ${message.author.username}\nID: ${message.author.id}`);
-	} else
-		    if (message.content.startsWith(prefix+"roll")) {
-			    message.reply("I'm not here to entertain you. That's what Elliott is here for.");
-				} else
 					if (message.content.startsWith(prefix+"poll")) {
 						async () => {
 						let question = message.content.slice(client.prefix.length+5)
@@ -129,6 +123,14 @@ client.on("message”, async(message) => {
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
+						if (message.content.startsWith(prefix+"whatami")) {
+						var embed = new Discord.MessageEmbed()
+							.setColor(13101459)
+							.setTitle("**This user is..**")
+							.setDescription(names[Math.floor(Math.random() * names.length)])
+							.setThumbnail(message.author.displayAvatarURL())
+								message.channel.send({embed})
+								   } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
@@ -136,14 +138,6 @@ client.on("message”, async(message) => {
 						.setDescription(legends[Math.floor(Math.random() * legends.length)])
 						message.channel.send({embed})
 					} else
-				if (message.content.startsWith(prefix+"whatami")) {
-						var embed = new Discord.MessageEmbed()
-							.setColor(13101459)
-							.setTitle("**This user is..**")
-							.setDescription(names[Math.floor(Math.random() * names.length)])
-							.setThumbnail(message.author.displayAvatarURL())
-								message.channel.send({embed})
-								     } else
 		    if (message.content.startsWith(prefix+"help")) {
 			    message.author.send("You need my commands? Okay, here they are.");
 			    } else
@@ -159,9 +153,7 @@ client.on("message”, async(message) => {
 			.catch(collected => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				  });
-				    }
-		    }});
-	client.on("message", (message) => {
+				    } else
 		if (message.content.includes("!can i hold your hand")) {
 			message.reply("No.");
 		} else
