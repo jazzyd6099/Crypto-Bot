@@ -184,9 +184,9 @@ client.on('message', async(message) => {
 															
 															var embedVote = new Discord.MessageEmbed()
 															.setTitle('New Vote')
-															.setAuthor(message.member.user.tag, message.member.user.displayavatarURL)
 															.setDescription(voteDescription)
 															.setColor(13101459)
+															.setFooter('Vote started by ${message.member.user.tag}')
 															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
