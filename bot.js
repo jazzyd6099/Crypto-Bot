@@ -187,7 +187,7 @@ client.on('message', async(message) => {
 															.setAuthor(message.member.user.tag, message.member.user.avatarURL)
 															.setDescription(voteDescription)
 															.setColor(13101459)
-															 let messageEmbed = await pollChannel.send(embedPoll);
+															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
 														} else
