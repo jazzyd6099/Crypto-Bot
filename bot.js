@@ -203,7 +203,7 @@ client.on('message', async(message) => {
 																var Embed = new Discord.MessageEmbed()
 																.setTitle('New Poll')
 																.setDescription(question)
-																.setField('🇦', `${option1}`)
+																.addField('🇦',`${option1}`)
 																.setFooter(`${message.author.username} created this poll.`)
 																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
 																await messagePoll.react('🇦')
