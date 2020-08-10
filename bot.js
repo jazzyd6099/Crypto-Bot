@@ -120,7 +120,7 @@ client.on('message', async message => {
 						.setDescription("These are my commands. There will be more to come. My prefix is self explanatory.")
 						.setAuthor('Crypto', 'https://i.postimg.cc/RCnXZHqy/cryptooooo.png')
 						.addField('*Server*','?serverinfo')
-						.addField('*Cryptage/Interactions*', '?roll, ?do you love me, ?whatami')
+						.addField('*Cryptage/Interactions*', '?roll, ?do you love me, ?whatami, ?pickalegend')
 						.addField('*User*', '?userinfo')
 						.setFooter('Bot coded and created by SpaceCarame#6433.')
 						message.channel.send({embed})
@@ -153,8 +153,7 @@ client.on('message', async(message) => {
 											  message.channel.send({embed})
 										  } else
 											  if (message.content.startsWith(prefix+"userinfo")) {
-												  let user = message.mentions.users.first();
-												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
+												  let user = message.mentions.users.first() || message.author;
 												  const member = message.guild.member(user);
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
@@ -166,6 +165,14 @@ client.on('message', async(message) => {
 												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 												  message.channel.send({embed})
 											  } else
+												  if (message.content.startsWith(prefix+"avatar")) {
+												  let user = message.mentions.users.first() || message.author;
+													  var embed = new Discord.MessageEmbed()
+													  .setcolor(13101459)
+													  .setAuthor(user.username)
+													  .setImage(user.AvatarURL)
+													  message.channel.send({embed})
+												  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
