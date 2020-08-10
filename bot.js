@@ -123,7 +123,7 @@ client.on('message', async(message) => {
 											  .setThumbnail(`https://i.postimg.cc/FRVPv8Q1/download.jpg`)
 											  .addField("Server Name", `${message.guild.name}`)
 											  .addField("Members", `${message.guild.memberCount}`)
-											  .addField("Members", `${message.guild.roles.size}`)
+											  .addField("Roles", `${message.guild.roles.size}`)
 											  message.channel.send({embed})
 										  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
