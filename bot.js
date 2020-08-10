@@ -199,7 +199,6 @@ client.on('message', async(message) => {
 																
 																let question = args.slice(1).join(' ');
     															if (!question) return message.channel.send("You need to provide a question for the poll.");
-																if (question.length < 101 && question.length > 11) return true;
 																
 																let option1 = args.slice(2).join(',')
 																if (!option1) return message.channel.send("Provide an option.");
