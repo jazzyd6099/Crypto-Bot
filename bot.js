@@ -98,7 +98,7 @@ client.on('message', async(message) => {
 	const command = args.shift().toLowerCase();
 	
 
-				if (command === "do you love me")) {
+				if (command === "do you love me") {
 					client.commands.get('ping').execute(message, args);
 
   }
