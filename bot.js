@@ -191,22 +191,28 @@ client.on('message', async(message) => {
 															       messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
-																message.channel.send("Enter options. Max 5. Type done when finished.");
-																let filter = m => {
-																	if(message.author.id === message.author.id) {
-																		if(message.content.toLowerCase() === 'done') collector.stop();
-																		else return true;
-																	}
-																	else return false;
-																}
-																let collector = message.channel.createMessageCollector(filter, { maxMatches: 5 });
-																let poll0ptions = await getpoll0options(collector);
-																console.log(poll0ptions);
+																let channel = message.mentions.channels.first();
+																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
-																function getPoll0ptions(collector) {
-																	return new Promise((resolve, reject) => { 
-																		collector.on('end', collected => resolve(collected.map(message => message.content)));
-																	});
+																let question = args.slice(1).join(' ')
+    															if (!question) return message.channel.send("You need to provide a question for the poll.");
+																
+																let option1 = args.split(',')
+																if (!option1) return message.channel.send("Provide an option.");
+																
+																let option2 = args.split(',')
+																if (option2.length > 1) return message.channel.send("provide another option.");
+																    
+																var Embed = new Discord.MessageEmbed()
+																.setTitle(`New Poll: ${question}`)
+																.setDescription('To vote, click on an emote below.')
+																.addField('🇦',`${option1}`)
+																.addField('🇧',`${option2}`)
+																.setFooter(`${message.author.username} created this poll.`)
+																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
+																await messagePoll.react('🇦')
+																await messagePoll.react('🇧')
+															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
