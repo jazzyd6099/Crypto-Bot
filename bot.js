@@ -114,7 +114,7 @@ client.on('message', async message => {
 						message.react('👎');
 					} else
 					if (message.content.includes("need my commands? Okay, here they are.")) {
-							var = embed new Discord.MessageEmbed()
+							var embed = new Discord.MessageEmbed()
 						.setTitle("My Commands")
 						.setColor(13101459)
 						.setDescription("These are my commands. There will be more to come. My prefix is self explanatory.")
