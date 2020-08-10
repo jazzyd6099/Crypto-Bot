@@ -178,13 +178,14 @@ client.on('message', async(message) => {
 													  if (message.content.startsWith(prefix+"reacttest")) {
 														  message.react('✅').then(() => message.react('🔧'));
 													} else
-														if (message.content.startsWith(prefix+"poll")) {
-															let pollChannel = message.mentions.channels.first();
-															let pollDescription = args.slice(1).join(' ');
+														if (message.content.startsWith(prefix+"vote")) {
+															let voteChannel = message.mentions.channels.first();
+															let voteDescription = args.slice(1).join(' ');
 															
-															var embedPoll = new Discord.MessageEmbed()
-															.setTitle('New Poll')
-															.setDescription(pollDescription)
+															var embedVote = new Discord.MessageEmbed()
+															.setTitle('New Vote')
+															.setAuthor(message.member.user.tag, message.member.user.avatarURL)
+															.setDescription(voteDescription)
 															.setColor(13101459)
 															 let messageEmbed = await pollChannel.send(embedPoll);
 															 await messageEmbed.react('✅')
