@@ -120,10 +120,11 @@ client.on('message', async(message) => {
 											  var embed = new Discord.MessageEmbed()
 											  .setColor(13101459)
 											  .setTitle("Server Information")
+											  .setDescription(`${message.guild}'s information`)
 											  .setThumbnail(`https://i.postimg.cc/FRVPv8Q1/download.jpg`)
-											  .addField("Server Name", `${message.guild.name}`)
-											  .addField("Members", `${message.guild.memberCount}`)
-											  .addField("Roles", `${message.guild.roles.cache.size}`)
+											  .addField("Member Count", `This server has ${message.guild.memberCount} members.`)
+											  .addField("Roles Count", `This server has ${message.guild.roles.cache.size} roles.`)
+											  .addField("Emojis Count", `This Server has ${message.guild.emojis.cache.size} emojis.`)
 											  message.channel.send({embed})
 										  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
