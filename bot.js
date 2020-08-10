@@ -174,7 +174,7 @@ client.on('message', async(message) => {
 													  message.channel.send({embed})
 												  } else
 													  if (message.content.startsWith(prefix+"reacttest")) {
-														  message.react('✅').then(() => message.react('🔧');
+														  message.react('✅').then(() => message.react('🔧'));
 															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
