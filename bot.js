@@ -116,6 +116,9 @@ client.on('message', async(message) => {
 							.setThumbnail(message.author.displayAvatarURL())
 								message.channel.send({embed})
 									  } else
+										  if (message.content.startsWith(prefix+"serverinfo")) {
+											 message.channel.send(`This server's name is: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+										  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
