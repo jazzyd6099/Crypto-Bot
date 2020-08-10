@@ -170,7 +170,7 @@ client.on('message', async(message) => {
 													  var embed = new Discord.MessageEmbed()
 													  .setColor(13101459)
 													  .setAuthor(user.username)
-													  .setImage(user.AvatarURL)
+													  .setImage(user.displayAvatarURL())
 													  message.channel.send({embed})
 												  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
