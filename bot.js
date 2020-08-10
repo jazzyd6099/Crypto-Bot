@@ -207,7 +207,6 @@ client.on('message', async(message) => {
 																	return new Promise((resolve, reject) => { 
 																		collector.on('end', collected => resolve(collected.map(message => message.content)));
 																	});
-															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
