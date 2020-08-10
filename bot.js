@@ -177,13 +177,12 @@ client.on('message', async(message) => {
 												  } else
 													  if (message.content.startsWith(prefix+"reacttest")) {
 														  message.react('✅').then(() => message.react('🔧'));
-															} else
-	//
+													} else
 														if (message.content.startsWith(prefix+"poll")) {
 															let pollChannel = message.mentions.channels.first();
 															let pollDescription = args.slice(1).join(' ');
 															
-															let embedPoll = new Discord.MessageEmbed()
+															var embedPoll = new Discord.MessageEmbed()
 															.setTitle('New Poll')
 															.setDescription(pollDescription)
 															.setColor(13101459)
