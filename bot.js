@@ -119,8 +119,8 @@ client.on('message', async(message) => {
 										  if (message.content.startsWith(prefix+"serverinfo")) {
 											  var embed = new Discord.MessageEmbed()
 											  .setColor(13101459)
-											  .setTitle("Server Info")
-											  .setThumbnail(message.guild.iconURL)
+											  .setTitle("Server Information")
+											  .setThumbnail(`https://i.postimg.cc/FRVPv8Q1/download.jpg`)
 											  .addField("Server Name", `${message.guild.name}`)
 											  .addField("Members", `${message.guild.memberCount}`)
 											  message.channel.send({embed})
