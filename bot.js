@@ -127,6 +127,19 @@ client.on('message', async(message) => {
 											  .addField("Emojis Count", `This Server has ${message.guild.emojis.cache.size} emojis.`)
 											  message.channel.send({embed})
 										  } else
+											  if (message.content.startsWith(prefix+"userinfo")) {
+												  let member = message.mentions.users.first();
+												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
+												  var embed = new Discord.MessageEmbed()
+												  .setColor(13101459)
+												  .setThumbnail(`${message.author.avatarURL}`)
+												  .addField("ID", `${member.id}`)
+												  .addField("Nickname", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
+												  .addField("Status", `${member.presence.status}`)
+												  .addField("In Server", `${message.guild.name}`)
+												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
+												  message.channel.send({embed})
+											  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
@@ -173,7 +186,7 @@ client.on('message', async(message) => {
 				},
 				fields: [{
 					name: "**Server**",
-					value: "WIP"
+					value: "?serverinfo"
 				},
 					 {
 						 name: "**Cryptage/Interactions**",
