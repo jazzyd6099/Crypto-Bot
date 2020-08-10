@@ -131,6 +131,8 @@ client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	const messageArray = message.content.split(' ');
 	const args = messageArray.slice(1);
+	const optionsmessageArray = message.content.split(',');
+	const pollargs = optionsmessageArray.slice(1)
 	
 			if (message.content.startsWith(prefix+"ping")) {
 				message.channel.send("Pong.");
@@ -193,19 +195,17 @@ client.on('message', async(message) => {
 															       messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
-																var emojiList = ['1⃣','2⃣','3⃣','4⃣','5⃣','6⃣','7⃣','8⃣','9⃣','🔟'];
-        															var optionsList = args.split(",");
-																
+												
 																let channel = message.mentions.channels.first();
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
-																let question = args.slice(1).join(' ')
+																let question = args.messageArray.slice(1).join(' ')
     															if (!question) return message.channel.send("You need to provide a question for the poll.");
 																
-																let option1 = args.split(",")
+																let option1 = pollargs.optionsmessageArray.slice(1).join(',')
 																if (!option1) return message.channel.send("Provide an option.");
 																
-																let option2 = args.split(",")
+																let option2 = pollargs.optionsmessageArray.slice(2).join(',')
 																if (option2.length > 1) return message.channel.send("provide another option.");
 																    
 																var Embed = new Discord.MessageEmbed()
