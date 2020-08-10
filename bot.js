@@ -106,7 +106,7 @@ client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
 			if (message.content.startsWith(prefix+"ping")) {
-				message.channel.send("pong.");
+				message.channel.send("Pong.");
 			} else
 						if (message.content.startsWith(prefix+"whatami")) {
 						var embed = new Discord.MessageEmbed()
