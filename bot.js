@@ -129,7 +129,7 @@ client.on('message', async message => {
 	      });
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
-	const messageArray = message.content.split(' ');
+	const messageArray = message.content.split('');
 	const args = messageArray.slice(1);
 	
 			if (message.content.startsWith(prefix+"ping")) {
@@ -180,7 +180,7 @@ client.on('message', async(message) => {
 													} else
 														if (message.content.startsWith(prefix+"poll")) {
 															let pollChannel = message.mentions.channels.first();
-															let pollDescription = args.slice(1).join(' ');
+															let pollDescription = args.slice(1).join('');
 															
 															var embedPoll = new Discord.MessageEmbed()
 															.setTitle('New Poll')
