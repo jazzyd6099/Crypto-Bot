@@ -168,7 +168,7 @@ client.on('message', async(message) => {
 												  if (message.content.startsWith(prefix+"avatar")) {
 												  let user = message.mentions.users.first() || message.author;
 													  var embed = new Discord.MessageEmbed()
-													  .setcolor(13101459)
+													  .setColor(13101459)
 													  .setAuthor(user.username)
 													  .setImage(user.AvatarURL)
 													  message.channel.send({embed})
