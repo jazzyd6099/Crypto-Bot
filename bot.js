@@ -186,7 +186,7 @@ client.on('message', async(message) => {
 															.setTitle('New Vote')
 															.setDescription(voteDescription)
 															.setColor(13101459)
-															.setFooter('Vote started by `${message.member.user.tag}`')
+															.setFooter(`Vote started by ${message.member.user.tag}`)
 															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
