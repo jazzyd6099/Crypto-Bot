@@ -122,7 +122,7 @@ client.on('message', async message => {
 						.addField('**Server**','?serverinfo')
 						.addField('**Cryptage/Interactions**', '?roll, ?do you love me, ?whatami')
 						.addField('**User**', '?userinfo')
-						.setFooter('Bot coded and made by SpaceCarame#6433.')
+						.setFooter('Bot coded and created by SpaceCarame#6433.')
 						message.channel.send({embed})
 					}
 
