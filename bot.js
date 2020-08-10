@@ -133,7 +133,7 @@ client.on('message', async(message) => {
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
 												  .addField("ID", `${member.id}`)
-												  .setThumbnail(`${member.displayAvatarURL}`)
+												  .setThumbnail(`${member.user.displayAvatarURL}`)
 												  .addField("Nickname", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
 												  .addField("Status", `${member.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
