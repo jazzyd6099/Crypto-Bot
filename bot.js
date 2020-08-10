@@ -132,7 +132,6 @@ client.on('message', async(message) => {
 												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
-												  .setThumbnail(`${message.author.avatarURL}`)
 												  .addField("ID", `${member.id}`)
 												  .addField("Nickname", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
 												  .addField("Status", `${member.presence.status}`)
