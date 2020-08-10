@@ -198,12 +198,16 @@ client.on('message', async(message) => {
         															if (!question) return message.channel.send("You need to provide a question for the poll.");
 																
 																let option1 = args.slice(2).join(' ')
-																if (!option1) return message.channel.send("provide an option.");
+																if (!option1) return message.channel.send("Provide an option.");
+																
+																let option2 = args.slice(3).join(' ')
+																if (!option2) return message.chanel.send("Provide another option.");
 																      
 																var Embed = new Discord.MessageEmbed()
 																.setTitle('New Poll')
 																.setDescription(question)
 																.addField('🇦',`${option1}`)
+																.addField('🇧',`${option2}`)
 																.setFooter(`${message.author.username} created this poll.`)
 																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
 																await messagePoll.react('🇦')
