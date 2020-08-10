@@ -130,14 +130,16 @@ client.on('message', async(message) => {
 											  if (message.content.startsWith(prefix+"userinfo")) {
 												  let user = message.mentions.users.first();
 												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
+												  const member = message.guild.member(user);
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
 												  .setDescription(`${user}`)
 												  .setAuthor(`${user.username}#${user.discriminator}`, user.displayAvatarURL())
+												  .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
 												  .addField("ID", `${user.id}`)
 												  .addField("Status", `${user.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
-												  .addField("Roles", member.roles.map(r => `{r}`).join(' | '))
+												  .addField("Roles", member.roles.map(roles => `{roles}`).join(' | '))
 												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 												  message.channel.send({embed})
 											  } else
