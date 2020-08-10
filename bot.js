@@ -198,7 +198,7 @@ client.on('message', async(message) => {
 																      if (!args.join(' ')) return message.reply('You need to supply the question')
 																      
 																var Embed = new Discord.MessageEmbed()
-																.setTitle('New Poll.')
+																.setTitle('New Poll')
 																.setDescription(args.join(' '))
 																.setFooter(`${message.author.username} created this poll.`)
 																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
