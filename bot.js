@@ -191,27 +191,17 @@ client.on('message', async(message) => {
 															       messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
-																let channel = message.mentions.channels.first();
-																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
-																
-																let question = args.slice(1).join(' ')
-        															if (!question) return message.channel.send("You need to provide a question for the poll.");
-																
-																let option1 = args.split(',')
-																if (!option1) return message.channel.send("Provide an option.");
-																
-																let option2 = args.split(',')
-																if (option2.length > 1) return message.channel.send("provide another option.");
-																      
-																var Embed = new Discord.MessageEmbed()
-																.setTitle('New Poll')
-																.setDescription(question)
-																.addField('🇦',`${option1}`)
-																.addField('🇧',`${option2}`)
-																.setFooter(`${message.author.username} created this poll.`)
-																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
-																await messagePoll.react('🇦')
-																await messagePoll.react('🇧')
+																message.channel.send("Enter options. Max 5. Type done when finished.");
+																let filter = m => {
+																	if(message.author.id === message.author.id) {
+																		if(message.content.toLowerCase() === 'done') collector.stop();
+																		else return true;
+																	}
+																	else return false;
+																}
+																let collector = message.channel.createMessageCollector(filter, { maxMatches: 5 });
+																collector.on('collect', message => console.log(message.content));
+																collector.on('end', collected => console.log(collected.size));
 															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
