@@ -117,7 +117,11 @@ client.on('message', async(message) => {
 								message.channel.send({embed})
 									  } else
 										  if (message.content.startsWith(prefix+"serverinfo")) {
-											 message.channel.send(`This server's name is: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+											  var embed = new Discord.MessageEmbed()
+											  .setTitle("Server Info")
+											  .addField("Server Name", `${message.guild.name}`)
+											  .addField("Members", `${message.guild.memberCount}`)
+											  message.channel.send({embed})
 										  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
