@@ -128,7 +128,7 @@ client.on('message', async(message) => {
 											  message.channel.send({embed})
 										  } else
 											  if (message.content.startsWith(prefix+"userinfo")) {
-												  let member = message.mentions.users.first();
+												  let user = message.mentions.users.first();
 												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
