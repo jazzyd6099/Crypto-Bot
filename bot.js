@@ -188,6 +188,7 @@ client.on('message', async(message) => {
 															.setDescription(pollDescription)
 															.setColor(13101459)
 															pollChannel.send({embedPoll})
+														} else
 															
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
