@@ -193,15 +193,15 @@ client.on('message', async(message) => {
 															if (message.content.startsWith(prefix+"poll")) {
 																message.channel.send("Enter options. Max 5. Type done when finished.");
 																let filter = m => {
+																	let collector = message.channel.createMessageCollector(filter, { maxMatches: 5 });
+																collector.on('collect', message => console.log(message.content));
+																collector.on('end', collected => console.log(collected.size));
 																	if(message.author.id === message.author.id) {
 																		if(message.content.toLowerCase() === 'done') collector.stop();
 																		else return true;
 																	}
 																	else return false;
 																}
-																let collector = message.channel.createMessageCollector(filter, { maxMatches: 5 });
-																collector.on('collect', message => console.log(message.content));
-																collector.on('end', collected => console.log(collected.size));
 															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
