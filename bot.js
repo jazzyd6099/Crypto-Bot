@@ -180,8 +180,8 @@ client.on('message', async(message) => {
 															let voteDescription = args.slice(1).join(' ');
 															
 															var embedVote = new Discord.MessageEmbed()
-															.setTitle('New Vote')
-															.setDescription(voteDescription)
+															.setTitle(`New Vote: ${voteDescription}`)
+															.setDescription('To vote, click the desired emoji below.')
 															.setColor(13101459)
 															.setTimestamp()
 															.setFooter(`Vote started by ${message.member.user.tag}`, message.member.user.displayAvatarURL())
