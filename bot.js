@@ -135,7 +135,7 @@ client.on('message', async(message) => {
 												  .setAuthor("${user.username}#${user.discriminator}", user.displayAvatarURL())
 												  .addField("ID", `${user.id}`)
 												  .setThumbnail(`${user.displayAvatarURL}`)
-												  .addField("Status", `${member.presence.status}`)
+												  .addField("Status", `${user.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
 												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 												  message.channel.send({embed})
