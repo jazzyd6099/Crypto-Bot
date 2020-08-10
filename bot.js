@@ -131,8 +131,6 @@ client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	const messageArray = message.content.split(' ');
 	const args = messageArray.slice(1);
-	const optionsmessageArray = message.content.split(',');
-	const pollargs = optionsmessageArray.slice(1);
 	
 			if (message.content.startsWith(prefix+"ping")) {
 				message.channel.send("Pong.");
