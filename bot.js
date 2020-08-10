@@ -198,8 +198,8 @@ client.on('message', async(message) => {
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
 																let question = args.slice(1).join(' ');
-																if (question.length < 101 && question.length > 11) return true;
     															if (!question) return message.channel.send("You need to provide a question for the poll.");
+																if (question.length < 101 && question.length > 11) return true;
 																
 																let option1 = args.slice(2).join(',')
 																if (!option1) return message.channel.send("Provide an option.");
