@@ -184,7 +184,7 @@ client.on('message', async(message) => {
 															
 															var embedVote = new Discord.MessageEmbed()
 															.setTitle('New Vote')
-															.setAuthor(message.member.user.tag, message.member.user.avatarURL)
+															.setAuthor(message.member.user.tag, message.member.user.displayavatarURL)
 															.setDescription(voteDescription)
 															.setColor(13101459)
 															 let messageEmbed = await voteChannel.send(embedVote);
