@@ -203,7 +203,7 @@ client.on('message', async(message) => {
 																let option1 = args.slice(1).join(', ')
 																if (!option1) return message.channel.send("Provide an option.");
 																
-																let option2 = args.slice(2).join(', ')
+																let option2 = args.slice(2).join(' ')
 																if (!option2) return message.channel.send("provide another option.");
 																    
 																var Embed = new Discord.MessageEmbed()
