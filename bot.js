@@ -100,7 +100,34 @@ client.on('message', async message => {
 		} else
 			if (message.content.toLowerCase().startsWith("helllo crypto")) {
 				message.reply("Hey.");
-		}
+		} else
+		if (message.content.includes("!can i hold your hand")) {
+			message.reply("No.");
+		} else
+			if (message.content.includes("love you crypto")) {
+					message.react('👎');
+			} else
+				if (message.content.includes("love crypto")) {
+					message.react('👎');
+				} else
+					if (message.content.includes("crypto i love you")) {
+						message.react('👎');
+					} else
+					if (message.content.includes("need my commands? Okay, here they are.")) {
+							var = embed new Discord.MessageEmbed()
+						.setTitle("My Commands")
+						.setColor(13101459)
+						.setDescription("These are my commands. There will be more to come. My prefix is self explanatory.")
+						.setAuthor('Crypto', 'https://i.postimg.cc/RCnXZHqy/cryptooooo.png')
+						.addFields(
+								{ name: '**Server**', value: '?serverinfo' },
+								{ name: '**Cryptage/Interactions**', value: '?roll, ?do you love me, ?whatami' },
+								{ name: '**User**', '?userinfo,' },
+								)
+						.setFooter('Bot coded and made by SpaceCarame#6433')
+						message.channel.send({embed})
+					}
+
 	      });
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
@@ -176,29 +203,6 @@ client.on('message', async(message) => {
 					if (message.content.includes("crypto i love you")) {
 						message.react('👎');
 						} else
-		if (message.content.includes("need my commands? Okay, here they are.")) {
-			message.channel.send({embed: {
-				color: 13101459,
-				title: "My Commands",
-				description: "These are my commands. There will be more to come. My prefix is self explanatory.",
-				author: {
-					name: "Crypto",
-					icon_url: "https://i.postimg.cc/RCnXZHqy/cryptooooo.png"
-				},
-				fields: [{
-					name: "**Server**",
-					value: "?serverinfo"
-				},
-					 {
-						 name: "**Cryptage/Interactions**",
-						 value: "?roll, ?do you love me, ?whatami"
-					 },
-					 {
-						 name: "**User**",
-						 value: "?userinfo, ?avatar"
-					 }
-					 ],
-				}});
 
   }
 });
