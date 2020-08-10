@@ -120,7 +120,7 @@ client.on('message', async message => {
 						.setDescription("These are my commands. There will be more to come. My prefix is self explanatory.")
 						.setAuthor('Crypto', 'https://i.postimg.cc/RCnXZHqy/cryptooooo.png')
 						.addField('__Server__','`?serverinfo`')
-						.addField('__Cryptage/Interactions__', '`?roll, ?do you love me`, `?whatami`, `?pickalegend`')
+						.addField('__Cryptage/Interactions__', '`?roll, ?do you love me`, `?whatami`, `?pickalegend`, `?poll`')
 						.addField('__User__', '`?userinfo`, `?avatar`')
 						.setFooter('*Bot coded and created by SpaceCarame#6433.*')
 						message.channel.send({embed})
@@ -175,9 +175,6 @@ client.on('message', async(message) => {
 													  .setImage(user.displayAvatarURL())
 													  message.channel.send({embed})
 												  } else
-													  if (message.content.startsWith(prefix+"reacttest")) {
-														  message.react('✅').then(() => message.react('🔧'));
-													} else
 														if (message.content.startsWith(prefix+"vote")) {
 															let voteChannel = message.mentions.channels.first();
 															let voteDescription = args.slice(1).join(' ');
@@ -186,12 +183,29 @@ client.on('message', async(message) => {
 															.setTitle('New Vote')
 															.setDescription(voteDescription)
 															.setColor(13101459)
+															.setTimestamp()
 															.setFooter(`Vote started by ${message.member.user.tag}`, message.member.user.displayAvatarURL())
 															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
 														} else
-															
+															if (message.content.startsWith(prefix+"poll")) {
+																let channel = message.mentions.channels.first()||message.guild.channels.cache.get(args[0])
+																 if(!channel){
+																return message.channel.send("You did not mention a channel for the poll to go into.")
+																 }
+																let question = message.content.slice(client.prefix.length+5)
+																if(!question){
+																	return message.channel.send("You did not specify a question for your poll.")
+																}
+																const Embed = new Discord.MessageEmbed()
+																.setTitle('New Poll.')
+																.setDescription(question)
+																.setFooter(`${message.author.username} created this poll.`)
+																let message = await client.channels.cache.get(channel.id).send(Embed)
+																await message.react('🙂')
+																await message.react('🙁')
+															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
