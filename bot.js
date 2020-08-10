@@ -178,8 +178,9 @@ client.on('message', async(message) => {
 													  if (message.content.startsWith(prefix+"reacttest")) {
 														  message.react('✅').then(() => message.react('🔧'));
 															} else
-	
+	//
 														if (message.content.startsWith(prefix+"poll")) {
+															let pollChannel = message.mentions.channels.first();
 															let pollDescription = args.slice(1).join(' ');
 															
 															let embedPoll = new Discord.MessageEmbed()
