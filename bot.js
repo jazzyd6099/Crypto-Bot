@@ -202,10 +202,10 @@ client.on('message', async(message) => {
 																let question = args.messageArray.slice(1).join(' ')
     															if (!question) return message.channel.send("You need to provide a question for the poll.");
 																
-																let option1 = pollargs.optionsmessageArray.slice(1).join(',')
+																let option1 = args.messageArray.slice(1).join(',')
 																if (!option1) return message.channel.send("Provide an option.");
 																
-																let option2 = pollargs.optionsmessageArray.slice(2).join(',')
+																let option2 = args.messageArray.slice(2).join(',')
 																if (option2.length > 1) return message.channel.send("provide another option.");
 																    
 																var Embed = new Discord.MessageEmbed()
