@@ -188,20 +188,6 @@ client.on('message', async(message) => {
 			.catch(collected => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				 });
-				  } else
-		if (message.content.includes("!can i hold your hand")) {
-			message.reply("No.");
-		} else
-			if (message.content.includes("love you crypto")) {
-					message.react('👎');
-			} else
-				if (message.content.includes("love crypto")) {
-					message.react('👎');
-				} else
-					if (message.content.includes("crypto i love you")) {
-						message.react('👎');
-						} else
-
   }
 });
 
