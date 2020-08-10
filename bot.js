@@ -191,14 +191,13 @@ client.on('message', async(message) => {
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
 																let channel = message.mentions.channels.first();
-																 if(!channel)
-																return message.channel.send("You did not mention a channel for the poll to go into.")
+																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
 																let question = message.content.slice(client.prefix.length+5)
 																if(!question)
 																	return message.channel.send("You did not specify a question for your poll.")
 																
-																const Embed = new Discord.MessageEmbed()
+																var Embed = new Discord.MessageEmbed()
 																.setTitle('New Poll.')
 																.setDescription(question)
 																.setFooter(`${message.author.username} created this poll.`)
