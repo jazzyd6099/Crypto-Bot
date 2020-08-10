@@ -193,18 +193,19 @@ client.on('message', async(message) => {
 															       messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
+																let split = message.args.join(' ').split(',');
 												
 																let channel = message.mentions.channels.first();
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
-																let question = args.slice(1).join(' ').spli(',')
+																let question = args.slice(1).join(' ').split(',');
     															if (!question) return message.channel.send("You need to provide a question for the poll.");
 																
-																let option1 = args.slice(1).join(' ').split(',')
+																let option1 = args.slice(1).join(' ').split(',');
 																if (!option1) return message.channel.send("Provide an option.");
 								
 																
-																let option2 = args.slice(3).join(' ')
+																let option2 = args.slice(3).join(' ');
 																if (!option2) return message.channel.send("provide another option.");
 																    
 																var Embed = new Discord.MessageEmbed()
