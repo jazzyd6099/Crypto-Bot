@@ -129,6 +129,8 @@ client.on('message', async message => {
 	      });
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
+	const messageArray = message.content.split(' ');
+	const args = messageArray.slice(1);
 	
 			if (message.content.startsWith(prefix+"ping")) {
 				message.channel.send("Pong.");
@@ -176,8 +178,6 @@ client.on('message', async(message) => {
 													  if (message.content.startsWith(prefix+"reacttest")) {
 														  message.react('✅').then(() => message.react('🔧'));
 															} else
-																const messageArray = message.content.split(' ');
-																const args = messageArray.slice(1);
 	
 														if (message.content.startsWith(prefix+"poll")) {
 															let pollChannel = message.mentions.channel.first();
