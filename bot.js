@@ -119,10 +119,10 @@ client.on('message', async message => {
 						.setColor(13101459)
 						.setDescription("These are my commands. There will be more to come. My prefix is self explanatory.")
 						.setAuthor('Crypto', 'https://i.postimg.cc/RCnXZHqy/cryptooooo.png')
-						.addField('*Server*','`?serverinfo`')
-						.addField('*Cryptage/Interactions*', '`?roll, ?do you love me`, `?whatami`, `?pickalegend`')
-						.addField('*User*', '`?userinfo`, `?avatar`')
-						.setFooter('Bot coded and created by SpaceCarame#6433.')
+						.addField('__Server__','`?serverinfo`')
+						.addField('__Cryptage/Interactions__', '`?roll, ?do you love me`, `?whatami`, `?pickalegend`')
+						.addField('__User__', '`?userinfo`, `?avatar`')
+						.setFooter('*Bot coded and created by SpaceCarame#6433.*')
 						message.channel.send({embed})
 					}
 
