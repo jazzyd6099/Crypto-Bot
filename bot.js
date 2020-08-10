@@ -190,7 +190,7 @@ client.on('message', async(message) => {
 															 await messageEmbed.react('❎')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
-																let channel = message.mentions.channels.first()||message.guild.channels.cache.get(args[0])
+																let channel = message.mentions.channels.first();
 																 if(!channel)
 																return message.channel.send("You did not mention a channel for the poll to go into.")
 																
