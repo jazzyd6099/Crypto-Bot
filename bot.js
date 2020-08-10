@@ -188,7 +188,7 @@ client.on('message', async(message) => {
 															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
-															 await messageEmbed.react('🤷')
+															       messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
 																let channel = message.mentions.channels.first();
@@ -202,8 +202,8 @@ client.on('message', async(message) => {
 																.setDescription(question)
 																.setFooter(`${message.author.username} created this poll.`)
 																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
-																await messagePoll.react('🙂')
-																await messagePoll.react('🙁')
+																await messagePoll.react('🇦')
+																await messagePoll.react('🇧')
 															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
