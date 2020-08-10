@@ -204,7 +204,7 @@ client.on('message', async(message) => {
 																if (!option1) return message.channel.send("Provide an option.");
 																
 																let option2 = args.slice(2).join(', ')
-																if (option2.length > 1) return message.channel.send("provide another option.");
+																if (!option2) return message.channel.send("provide another option.");
 																    
 																var Embed = new Discord.MessageEmbed()
 																.setTitle(`New Poll: ${question}`)
