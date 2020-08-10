@@ -105,76 +105,13 @@ client.on('message', async message => {
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+	
 
-				if (message.content.startsWith(prefix+"do you love me")) {
-					message.reply("I don't think so.");
-				} else
-						if (message.content.startsWith(prefix+"whatami")) {
-						var embed = new Discord.MessageEmbed()
-							.setColor(13101459)
-							.setTitle("**This user is..**")
-							.setDescription(names[Math.floor(Math.random() * names.length)])
-							.setThumbnail(message.author.displayAvatarURL())
-								message.channel.send({embed})
-								   } else
-					if (message.content.startsWith(prefix+"pickalegend")) {
-						var embed = new Discord.MessageEmbed()
-						.setColor(13101459)
-						.setTitle("**The legend you wanted me to pick is..**")
-						.setDescription(legends[Math.floor(Math.random() * legends.length)])
-						message.channel.send({embed})
-					} else
-		    if (message.content.startsWith(prefix+"help")) {
-			    message.author.send("You need my commands? Okay, here they are.");
-			    } else
-				    if (message.content.startsWith(prefix+"reactawait")) {
-					   message.react('👍').then(() => message.react('👎'));
-					    const filter = (reaction, user) => {
-			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
-		};
-			message.awaitReactions(filter, { maxMatches: 1, time: 60000, errors: ['time'] })
-			.then(collected => {
-				const reaction = collected.first();
-			})
-			.catch(collected => {
-				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
-				  });
-				    } else
-		if (message.content.includes("!can i hold your hand")) {
-			message.reply("No.");
-		} else
-			if (message.content.includes("love you crypto")) {
-					message.react('👎');
-			} else
-				if (message.content.includes("love crypto")) {
-					message.react('👎');
-				} else
-					if (message.content.includes("crypto i love you")) {
-						message.react('👎');
-						} else
-		if (message.content.includes("need my commands? Okay, here they are.")) {
-			message.channel.send({embed: {
-				color: 13101459,
-				title: "My Commands",
-				description: "These are my commands. There will be more to come. My prefix is self explanatory.",
-				author: {
-					name: "Crypto",
-					icon_url: "https://i.postimg.cc/RCnXZHqy/cryptooooo.png"
-				},
-				fields: [{
-					name: "**Server**",
-					value: "WIP"
-				},
-					 {
-						 name: "**Cryptage/Interactions**",
-						 value: "?roll, ?do you love me, ?whatami"
-					 },
-					 {
-						 name: "**User**",
-						 value: "?userinfo, ?avatar"
-					 }
-					 ],
-				}});
+				if (command === "do you love me")) {
+					client.commands.get('ping').execute(message, args);
+
   }
 });
 
