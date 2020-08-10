@@ -193,7 +193,7 @@ client.on('message', async(message) => {
 																let channel = message.mentions.channels.first();
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
-																let question = message.content.slice(client.prefix.length+5+channel.id+3)
+																let question = message.content.slice(client.prefix.length+5+channel.id.length+3)
 																if(!question) return message.channel.send("You did not specify a question for your poll.")
 																
 																var Embed = new Discord.MessageEmbed()
