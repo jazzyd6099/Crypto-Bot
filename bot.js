@@ -134,7 +134,6 @@ client.on('message', async(message) => {
 												  .setColor(13101459)
 												  .setAuthor("${user.username}#${user.discriminator}", user.displayAvatarURL())
 												  .addField("ID", `${user.id}`)
-												  .setThumbnail(`${user.displayAvatarURL}`)
 												  .addField("Status", `${user.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
 												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
