@@ -186,7 +186,7 @@ client.on('message', async(message) => {
 															.setTitle('New Poll')
 															.setDescription(pollDescription)
 															.setColor(13101459)
-															 pollChannel.send({embedPoll})
+															 pollChannel.send(embedPoll);
 														} else
 															
 					if (message.content.startsWith(prefix+"pickalegend")) {
