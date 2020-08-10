@@ -177,6 +177,8 @@ client.on('message', async(message) => {
 												  } else
 														if (message.content.startsWith(prefix+"vote")) {
 															let voteChannel = message.mentions.channels.first();
+															if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
+															
 															let voteDescription = args.slice(1).join(' ');
 															
 															var embedVote = new Discord.MessageEmbed()
