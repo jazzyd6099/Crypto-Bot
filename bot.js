@@ -132,9 +132,9 @@ client.on('message', async(message) => {
 												  if(message.mentions.users.size < 1) return message.reply("You forgot to mention someone for the user information.");
 												  var embed = new Discord.MessageEmbed()
 												  .setColor(13101459)
-												  .addField("ID", `${member.id}`)
-												  .setThumbnail(message.author.displayAvatarURL())
-												  .addField("Nickname", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
+												  .setAuthor("${user.username}#${user.discriminator}", user.displayAvatarURL())
+												  .addField("ID", `${user.id}`)
+												  .setThumbnail(`${user.displayAvatarURL}`)
 												  .addField("Status", `${member.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
 												  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
