@@ -115,16 +115,6 @@ client.on('message', async(message) => {
 							.setDescription(names[Math.floor(Math.random() * names.length)])
 							.setThumbnail(message.author.displayAvatarURL())
 								message.channel.send({embed})
-								  } else
-									  if (message.content.startsWith(prefix+"serverinfo")) {
-										  var embed = new Discord.MessageEmbed()
-										  .setColor(13101459)
-										  .setAuthor(message.guild.name, message.guild.iconURL)
-										  .addField("Name", message.guild.name, true)
-										  .addField("Total | Humans | Bots", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
-										  .addField("Roles", message.guild.roles.size, true)
-										  .setThumbnail(message.guild.iconURL)
-										  message.channel.send({embed})
 									  } else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
