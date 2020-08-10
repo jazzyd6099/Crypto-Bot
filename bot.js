@@ -180,7 +180,6 @@ client.on('message', async(message) => {
 															} else
 	
 														if (message.content.startsWith(prefix+"poll")) {
-															let channel = message.mentions.channel.first();
 															let pollDescription = args.slice(1).join(' ');
 															
 															let embedPoll = new Discord.MessageEmbed()
