@@ -188,17 +188,17 @@ client.on('message', async(message) => {
 															 let messageEmbed = await voteChannel.send(embedVote);
 															 await messageEmbed.react('✅')
 															 await messageEmbed.react('❎')
+															 await messageEmbed.react('🤷')
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
 																let channel = message.mentions.channels.first();
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
-																let question = message.content.slice(client.prefix.length+5+channel.id.length+3)
-																if(!question) return message.channel.send("You did not specify a question for your poll.")
-																
+																      if (!args.join(' ')) return message.reply('You need to supply the question')
+																      
 																var Embed = new Discord.MessageEmbed()
 																.setTitle('New Poll.')
-																.setDescription(question)
+																.setDescription(args.join(' '))
 																.setFooter(`${message.author.username} created this poll.`)
 																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
 																await messagePoll.react('🙂')
