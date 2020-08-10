@@ -194,16 +194,15 @@ client.on('message', async(message) => {
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
 																let question = message.content.slice(client.prefix.length+5)
-																if(!question)
-																	return message.channel.send("You did not specify a question for your poll.")
+																if(!question) return message.channel.send("You did not specify a question for your poll.")
 																
 																var Embed = new Discord.MessageEmbed()
 																.setTitle('New Poll.')
 																.setDescription(question)
 																.setFooter(`${message.author.username} created this poll.`)
-																let message = await client.channels.cache.get(channel.id).send(Embed)
-																await message.react('🙂')
-																await message.react('🙁')
+																let messagePoll = await client.channels.cache.get(channel.id).send(Embed)
+																await messagePoll.react('🙂')
+																await messagePoll.react('🙁')
 															} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
