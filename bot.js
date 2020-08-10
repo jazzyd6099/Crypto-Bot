@@ -105,9 +105,7 @@ client.on('message', async message => {
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
-	if (message.content.startsWith(prefix+"ping")) {
-	message.channel.send("pong.");
-	} else
+
 				if (message.content.startsWith(prefix+"do you love me")) {
 					message.reply("I don't think so.");
 				} else
