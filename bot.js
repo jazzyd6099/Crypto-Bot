@@ -91,17 +91,6 @@ client.user.setPresence({ activity: { name: activity.text, type: activity.type }
 	   .then(console.log)
   .catch(console.error);
 });
-client.on('message', async message => {
-	if (message.content.toLowerCase().startsWith("Hey Crypto")) {
-		message.reply("Hello.");
-	} else
-		if (message.content.toLowerCase().startsWith("hi crypto")) {
-			message.reply("Hi.");
-		} else
-			if (message.content.toLowerCase().startsWith("helllo crypto")) {
-				message.reply("Hey.");
-		}
-	      });
 client.on('message', async(message) => {
  if (!message.content.startsWith(prefix)) return;
 	
