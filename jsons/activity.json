@@ -15,6 +15,10 @@
 		"type": "PLAYING"
   },
   {
+	  "text": "a movie",
+	  "type": "WATCHING"
+  },
+ {
 		"text": "Elliott talk",
 		"type": "LISTENING"
   },
