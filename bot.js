@@ -176,6 +176,19 @@ client.on('message', async(message) => {
 													  if (message.content.startsWith(prefix+"reacttest")) {
 														  message.react('✅').then(() => message.react('🔧'));
 															} else
+																const messageArray = message.content.split(' ');
+																const args = messageArray.slice(1);
+	
+														if (message.content.startsWith(prefix+"poll")) {
+															let pollChannel = message.mentions.channel.first();
+															let pollDescription = args.slice(1).join(' ');
+															
+															let embedPoll = new Discord.MessageEmbed()
+															.setTitle('New Poll')
+															.setDescription(pollDescription)
+															.setColor(13101459)
+															pollChannel.send({embedPoll})
+															
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
