@@ -122,7 +122,7 @@ client.on('message', async message => {
 						.addField('__Server__','`?serverinfo`')
 						.addField('__Cryptage/Interactions__', '`?roll, ?do you love me`, `?whatami`, `?pickalegend`, `?poll`, `?vote`')
 						.addField('__User__', '`?userinfo`, `?avatar`')
-						.setFooter('*Bot coded and created by SpaceCarame#6433.*')
+						.setFooter('Bot coded and created by SpaceCarame#6433.')
 						message.channel.send({embed})
 					}
 
