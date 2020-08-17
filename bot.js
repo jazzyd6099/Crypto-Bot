@@ -194,7 +194,6 @@ client.on('message', async(message) => {
 														} else
 															if (message.content.startsWith(prefix+"poll")) {
 															
-												
 																let channel = message.mentions.channels.first();
 																if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the poll in.");
 																
@@ -225,6 +224,9 @@ client.on('message', async(message) => {
 						.setDescription(legends[Math.floor(Math.random() * legends.length)])
 						message.channel.send({embed})
 					} else
+						if (message.content.startsWith(prefix+"roll")) {
+							message.reply("I'm not here for your entertainment. That's what Elliott is here for.");
+						} else
 		  if (message.content.startsWith(prefix+"help")) {
 			  message.author.send("You need my commands? Okay, here they are.");
 			  } else
