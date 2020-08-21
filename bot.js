@@ -251,7 +251,8 @@ client.on('message', async(message) => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				 });
 					  client.on("messageReactionAdd", async (reaction, user) => {
-					  if (reaction.message.partial) await reaction.message.fetch()
+					  if (reaction.message.partial) await reaction.message.fetch();
+					  if (reaction.partial) await reaction.fetch();
 						  
 						  if (reaction.message.channel.id === "746203022358478909") {
 						  if (reaction.emoji.name === '🟩'){
