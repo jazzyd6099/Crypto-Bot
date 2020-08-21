@@ -106,6 +106,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	if(reaction.message.channel.id === "746203022358478909") {
 	if(reaction.emoji.name === '🟩'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("700549884029435955")
+		return user.send("Role was taken from you.").catch(() => console.log("Failed to send DM."));
 	}
 	} else {
 		return;
