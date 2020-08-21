@@ -182,6 +182,8 @@ client.on('message', async(message) => {
 											  .setTitle("Server Information")
 											  .setDescription(`${message.guild}'s information`)
 											  .setThumbnail(`https://i.postimg.cc/FRVPv8Q1/download.jpg`)
+											  .addField("Server ID", message.guild.id)
+											  .addField("Owner", message.guild.owner.user.tag)
 											  .addField("Member Count", `This server has ${message.guild.memberCount} members.`)
 											  .addField("Roles Count", `This server has ${message.guild.roles.cache.size} roles.`)
 											  .addField("Emojis Count", `This Server has ${message.guild.emojis.cache.size} emojis.`)
@@ -254,6 +256,7 @@ client.on('message', async(message) => {
 																	
 																	let Reactchannel = message.mentions.channels.first();
 																	if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
+																	
 																	
 																	var embed = new Discord.MessageEmbed()
 																	.setTitle('Reaction Roles')
