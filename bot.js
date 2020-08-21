@@ -89,8 +89,12 @@ client.on('disconnect', () => {
 						  if (reaction.message.channel.id === "746203022358478909") {
 						  if (reaction.emoji.name === '🟩'){
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
-							  return user.send("Role was given to you.").catch(() => console.log("Failed to send DM."));
+							  return user.send("Green Test Role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
+							  if(reaction.emoji.name === '🟪'){
+								  await reaction.message.guild.members.cache.get(user.id).roles.add("746232825908559934")
+							  return user.send("Purple Test Role was given to you.").catch(() => console.log("Failed to send DM."));
+							  }
 						  } else {
 							  return;
 						  }
@@ -261,9 +265,12 @@ client.on('message', async(message) => {
 																	var embed = new Discord.MessageEmbed()
 																	.setTitle('Reaction Roles')
 																	.setDescription('React to obtain the role.')
+																	.addField('🟩 Test in Green')
+																	.addField('🟪 Test in Purple')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🟩')
+																	messageEmbed.react('🟪')
 																} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
