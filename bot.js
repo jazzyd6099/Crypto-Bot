@@ -89,10 +89,28 @@ client.on('disconnect', () => {
 						  if (reaction.message.channel.id === "746203022358478909") {
 						  if (reaction.emoji.name === '🟩'){
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
+							  return user.send("Role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
+						  } else {
+							  return;
 						  }
 							  
 					  })
+cllient.on("messageReactionRemove", async (reaction, user) => {
+	if(reaction.message.partial) await reaction.fetch();
+	if(reaction.partial) await reaction.fetich();
+	
+	if(user.bot) return;
+	if(!reaction.message.guild) return;
+		
+	if(reaction.message.channel.id === "746203022358478909") {
+	if(reaction.emoji.name === '🟩'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("700549884029435955")
+	}
+	} else {
+		return;
+	}
+})
 
 client.on('reconnecting', () => console.warn('Reconnecting...'))
 	
