@@ -35,6 +35,7 @@ var legends = [
 	"BloodHound",
 	"Octane",
 	"Crypto",
+	"Rampart",
 	"Wattson",
 	"Caustic",
 	];
