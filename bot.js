@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { prefix } = require('./config.json');
 const activities = require('./jsons/activity');
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -250,6 +250,16 @@ client.on('message', async(message) => {
 			.catch(collected => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				 });
+					  client.on("messageReactionAdd", async (reaction, user) => {
+					  if (reaction.message.partial) await reaction.message.fetch()
+						  
+						  if (reaction.message.channel.id === "746203022358478909") {
+						  if (reaction.emoji.name === '🟩'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add('746203940282040462')
+						  }
+						  }
+							  
+					  })
   }
 });
 
