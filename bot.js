@@ -96,7 +96,7 @@ client.on('disconnect', () => {
 						  }
 							  
 					  })
-cllient.on("messageReactionRemove", async (reaction, user) => {
+client.on("messageReactionRemove", async (reaction, user) => {
 	if(reaction.message.partial) await reaction.fetch();
 	if(reaction.partial) await reaction.fetich();
 	
