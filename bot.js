@@ -79,6 +79,20 @@ client.on('disconnect', () => {
   console.warn('Disconnected!')
   process.exit(0);
 })
+ client.on("messageReactionAdd", async (reaction, user) => {
+					  if (reaction.message.partial) await reaction.message.fetch();
+					  if (reaction.partial) await reaction.fetch();
+						  
+						  if(user.bot) return;
+						  if(!reaction.message.guild) return;
+						  
+						  if (reaction.message.channel.id === "746203022358478909") {
+						  if (reaction.emoji.name === '🟩'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
+						  }
+						  }
+							  
+					  })
 
 client.on('reconnecting', () => console.warn('Reconnecting...'))
 	
@@ -254,20 +268,7 @@ client.on('message', async(message) => {
 			.catch(collected => {
 				message.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
 				 });
-					  client.on("messageReactionAdd", async (reaction, user) => {
-					  if (reaction.message.partial) await reaction.message.fetch();
-					  if (reaction.partial) await reaction.fetch();
-						  
-						  if(user.bot) return;
-						  if(!reaction.message.guild) return;
-						  
-						  if (reaction.message.channel.id === "746203022358478909") {
-						  if (reaction.emoji.name === '🟩'){
-							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
-						  }
-						  }
-							  
-					  })
+					 
   }
 });
 
