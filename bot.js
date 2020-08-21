@@ -217,6 +217,14 @@ client.on('message', async(message) => {
 																await messagePoll.react('🇦')
 																await messagePoll.react('🇧')
 															} else
+																if (message.content.startsWith(prefix+"reactrole")) {
+																	var embed = new Discord.MessageEmbed()
+																	.setTitle('Reaction Roles')
+																	.setDescription('React to obtain the role.')
+																	.setColor(13101459)
+																	let messageEmbed = await message.channel.send(embed)
+																	messageEmbed.react('🟩')
+																} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
