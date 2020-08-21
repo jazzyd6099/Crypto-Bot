@@ -266,7 +266,7 @@ client.on('message', async(message) => {
 																	
 																	var embed = new Discord.MessageEmbed()
 																	.setTitle('Reaction Roles')
-																	.setDescription('React to obtain the role. \n\n🟩: `Test in Green` \n\n🟪: `Test in Purple`')
+																	.setDescription('React to obtain the role. \n\n🟩 : `Test in Green` \n\n🟪 : `Test in Purple`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🟩')
