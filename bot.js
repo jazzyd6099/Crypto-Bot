@@ -259,7 +259,7 @@ client.on('message', async(message) => {
 						  
 						  if (reaction.message.channel.id === "746203022358478909") {
 						  if (reaction.emoji.name === '🟩'){
-							  await reaction.message.guild.members.cache.get(user.id).roles.add("746203940282040462")
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
 						  }
 						  }
 							  
