@@ -196,6 +196,8 @@ client.on('message', async(message) => {
 												  .setColor(13101459)
 												  .setDescription(`${user}`)
 												  .setAuthor(`${user.username}#${user.discriminator}`, user.displayAvatarURL())
+												  .addField("Username", user.username)
+												  .addField("Nickname", member.username)
 												  .addField("ID", `${user.id}`)
 												  .addField("Status", `${user.presence.status}`)
 												  .addField("In Server", `${message.guild.name}`)
