@@ -218,14 +218,15 @@ client.on('message', async(message) => {
 																await messagePoll.react('🇧')
 															} else
 																if (message.content.startsWith(prefix+"reactrole")) {
-																	let channel = message.mentions.channel.first();
-																	if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in");
+																	
+																	let Reactchannel = message.mentions.channels.first();
+																	if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
 																	
 																	var embed = new Discord.MessageEmbed()
 																	.setTitle('Reaction Roles')
 																	.setDescription('React to obtain the role.')
 																	.setColor(13101459)
-																	let messageEmbed = await client.channels.cache.get(channel.id).send(embed)
+																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🟩')
 																} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
