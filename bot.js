@@ -273,6 +273,18 @@ client.on('message', async(message) => {
 																	messageEmbed.react('🟩')
 																	messageEmbed.react('🟪')
 																} else
+																	if (message.content.startsWith(prefix+"rrole1")) {
+																		
+																		let Reactchannell = message.mentions.channels.first();
+																		if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
+																		
+																		var embed = new Discord.MessageEmbed()
+																	.setTitle('Horny Role')
+																	.setDescription('React to obtain a role. This role is to get into the nsfw channel. \n\n🤫 : `Horny`')
+																	.setColor(13101459)
+																	let messageEmbed = await Reactchannell.send(embed)
+																	messageEmbed.react('🤫')
+																	} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
