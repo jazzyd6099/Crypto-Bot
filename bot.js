@@ -92,7 +92,7 @@ client.on('disconnect', () => {
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
 							  return user.send("Horny role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
-							    if (reaction.emoji.name === '760631281922605137'){
+							    if (reaction.emoji.name === 'robloxicon'){
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760635090182471690")
 							  return user.send("Roblox role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
