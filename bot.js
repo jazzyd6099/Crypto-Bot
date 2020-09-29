@@ -261,7 +261,7 @@ client.on('message', async(message) => {
 																	.setTitle('Horny Role')
 																	.setDescription('React to obtain a role. This os the role to get into the nsfw channel. \n\n🤫 : `Horny`')
 																	.setColor(13101459)
-																	let messageEmbed = await Reactchannell.send(embed)
+																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🤫')
 																	} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
