@@ -268,6 +268,18 @@ client.on('message', async(message) => {
 																		message.react('760631281922605137')
 																		message.react('760633873334796328')
 																		} else
+																		if (message.content.startsWith(prefix+"rrole2")){
+																		
+																		let Reactchannell = message.mentions.channels.first();
+																		if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
+																		
+																		var embed = new Discord.MessageEmbed()
+																	.setTitle('Games Roles')
+																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n760631281922605137 : `Roblox`')
+																	.setColor(13101459)
+																	let messageEmbed = await Reactchannell.send(embed)
+																	messageEmbed.react('760631281922605137')
+																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
