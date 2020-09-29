@@ -91,6 +91,7 @@ client.on('disconnect', () => {
 						  if (reaction.emoji.name === '🤫'){
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
 							  return user.send("Horny role was given to you.").catch(() => console.log("Failed to send DM."));
+						  }
 						  } else {
 							  return;
 						  }
