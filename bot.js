@@ -116,10 +116,12 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	if(reaction.emoji.name === '🤫'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("760565558822961162")
 	}
-		if(reaction.emoji.name === 'robloxicon'){
+		if(reaction.emoji.name === 'roblox'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("760635090182471690")
 	}
-		
+		if(reaction.emoji.name === 'amongus'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("760631726577549373")
+	}
 	} else {
 		return;
 	}
@@ -287,11 +289,12 @@ client.on('message', async(message) => {
 																		
 																		var embed = new Discord.MessageEmbed()
 																	.setTitle('Games Roles')
-																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n<:robloxicon:760631281922605137> : `Roblox` \n\n<:amongus:760633873334796328> : `Among Us`')
+																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n<:robloxicon:760631281922605137> : `Roblox` \n\n<:amongus:760633873334796328> : `Among Us` \n\n<:minecrafticon:760650391682547732> : `Minecraft`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannell.send(embed)
 																	messageEmbed.react('760631281922605137')
 																	messageEmbed.react('760633873334796328')
+																	messageEmbed.react('760650391682547732')
 																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
