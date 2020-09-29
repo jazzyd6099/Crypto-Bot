@@ -264,6 +264,9 @@ client.on('message', async(message) => {
 																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🤫')
 																	} else
+																		if (message.content.startsWith(prefix+"emojitest")) {
+																		message.react('<:robloxicon:760631281922605137>')
+																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
 						.setColor(13101459)
