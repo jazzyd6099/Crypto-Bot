@@ -96,6 +96,10 @@ client.on('disconnect', () => {
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760635090182471690")
 							  return user.send("Roblox role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
+							    if (reaction.emoji.name === 'amongus'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("760631726577549373")
+							  return user.send("Among Us role was given to you.").catch(() => console.log("Failed to send DM."));
+						  }
 						  } else {
 							  return;
 						  }
@@ -112,6 +116,10 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	if(reaction.emoji.name === '🤫'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("760565558822961162")
 	}
+		if(reaction.emoji.name === 'robloxicon'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("760635090182471690")
+	}
+		
 	} else {
 		return;
 	}
