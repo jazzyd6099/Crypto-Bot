@@ -105,8 +105,8 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	if(!reaction.message.guild) return;
 		
 	if(reaction.message.channel.id === "760625860356866118") {
-	if(reaction.emoji.name === '🟩'){
-		await reaction.message.guild.members.cache.get(user.id).roles.remove("700549884029435955")
+	if(reaction.emoji.name === '🤫'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("760565558822961162")
 	}
 	} else {
 		return;
