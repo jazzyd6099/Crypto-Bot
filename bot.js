@@ -96,11 +96,6 @@ client.on('disconnect', () => {
 								  await reaction.message.guild.members.cache.get(user.id).roles.add("746232825908559934")
 							  return user.send("Purple Test Role was given to you.").catch(() => console.log("Failed to send DM."));
 							  }
-							  if(reaction.message.channel.id === "760610711461560370") {
-							  if(reaction.emoji.name === '🤫'){
-								  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
-								  return user.send("Horny role was given to you.").catch(() => console.log("Failed to send DM."));
-							  }
 						  } else {
 							  return;
 						  }
