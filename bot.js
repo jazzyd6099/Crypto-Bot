@@ -87,20 +87,10 @@ client.on('disconnect', () => {
 						  if(user.bot) return;
 						  if(!reaction.message.guild) return;
 						  
-						  if (reaction.message.channel.id === "746203022358478909") {
-						  if (reaction.emoji.name === '🟩'){
-							  await reaction.message.guild.members.cache.get(user.id).roles.add("700549884029435955")
-							  return user.send("Green Test Role was given to you.").catch(() => console.log("Failed to send DM."));
-						  }
-							  if(reaction.emoji.name === '🟪'){
-								  await reaction.message.guild.members.cache.get(user.id).roles.add("746232825908559934")
-							  return user.send("Purple Test Role was given to you.").catch(() => console.log("Failed to send DM."));
-						 }
-							  if (reaction.message.channel.id === "760625860356866118") {
-							  	if(reaction.emoji.name === '🤫'){
-								  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
+						  if (reaction.message.channel.id === "760625860356866118") {
+						  if (reaction.emoji.name === '🤫'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
 							  return user.send("Horny role was given to you.").catch(() => console.log("Failed to send DM."));
-								}
 						  } else {
 							  return;
 						  }
@@ -113,13 +103,10 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	if(user.bot) return;
 	if(!reaction.message.guild) return;
 		
-	if(reaction.message.channel.id === "746203022358478909") {
+	if(reaction.message.channel.id === "760625860356866118") {
 	if(reaction.emoji.name === '🟩'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("700549884029435955")
 	}
-		if(reaction.emoji.name === '🟪'){
-			 await reaction.message.guild.members.cache.get(user.id).roles.remove("746232825908559934")
-		}
 	} else {
 		return;
 	}
@@ -264,23 +251,9 @@ client.on('message', async(message) => {
 																await messagePoll.react('🇦')
 																await messagePoll.react('🇧')
 															} else
-																if (message.content.startsWith(prefix+"reactrole")) {
-																	
-																	let Reactchannel = message.mentions.channels.first();
-																	if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
-																	
-																	
-																	var embed = new Discord.MessageEmbed()
-																	.setTitle('Reaction Roles')
-																	.setDescription('React to obtain a role. \n\n🟩 : `Test in Green` \n\n🟪 : `Test in Purple`')
-																	.setColor(13101459)
-																	let messageEmbed = await Reactchannel.send(embed)
-																	messageEmbed.react('🟩')
-																	messageEmbed.react('🟪')
-																} else
 																	if (message.content.startsWith(prefix+"rrole1")) {
 																		
-																		let Reactchannell = message.mentions.channels.first();
+																		let Reactchannel = message.mentions.channels.first();
 																		if(message.mentions.channels.size < 1) return message.channel.send("You forgot to mention a channel for me to put the reaction role in.");
 																		
 																		var embed = new Discord.MessageEmbed()
