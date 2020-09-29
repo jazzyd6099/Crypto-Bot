@@ -259,7 +259,7 @@ client.on('message', async(message) => {
 																		
 																		var embed = new Discord.MessageEmbed()
 																	.setTitle('Horny Role')
-																	.setDescription('React to obtain a role. This os the role to get into the nsfw channel. \n\n🤫 : `Horny`')
+																	.setDescription('React to obtain a role. This is the role to get into the nsfw channel. \n\n🤫 : `Horny`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannel.send(embed)
 																	messageEmbed.react('🤫')
