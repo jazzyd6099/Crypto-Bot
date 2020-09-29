@@ -96,6 +96,11 @@ client.on('disconnect', () => {
 								  await reaction.message.guild.members.cache.get(user.id).roles.add("746232825908559934")
 							  return user.send("Purple Test Role was given to you.").catch(() => console.log("Failed to send DM."));
 							  }
+							  if(reaction.message.channel.id === "760610711461560370") {
+							  if(reaction.emoji.name === '🤫'){
+								  await reaction.message.guild.members.cache.get(user.id).roles.add("760565558822961162")
+								  return user.send("Horny role was given to you.").catch(() => console.log("Failed to send DM."));
+							  }
 						  } else {
 							  return;
 						  }
@@ -114,6 +119,10 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	}
 		if(reaction.emoji.name === '🟪'){
 			 await reaction.message.guild.members.cache.get(user.id).roles.remove("746232825908559934")
+		}
+		if(reaction.message.channel.id === "760610711461560370") {
+		if(reaction.emoji.name === '🤫'){
+			await reaction.message.guild.members.cache.get(user.id).roles.remove("760565558822961162")
 		}
 	} else {
 		return;
@@ -280,7 +289,7 @@ client.on('message', async(message) => {
 																		
 																		var embed = new Discord.MessageEmbed()
 																	.setTitle('Horny Role')
-																	.setDescription('React to obtain a role. This role is to get into the nsfw channel. \n\n🤫 : `Horny`')
+																	.setDescription('React to obtain a role. This os the role to get into the nsfw channel. \n\n🤫 : `Horny`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannell.send(embed)
 																	messageEmbed.react('🤫')
