@@ -265,7 +265,7 @@ client.on('message', async(message) => {
 																	messageEmbed.react('🤫')
 																	} else
 																		if (message.content.startsWith(prefix+"emojitest")) {
-																		message.react('<:robloxicon:760631281922605137>')
+																		message.react('760631281922605137')
 																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
