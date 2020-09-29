@@ -275,7 +275,7 @@ client.on('message', async(message) => {
 																		
 																		var embed = new Discord.MessageEmbed()
 																	.setTitle('Games Roles')
-																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n760631281922605137 : `Roblox`')
+																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n<:robloxicon:760631281922605137> : `Roblox`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannell.send(embed)
 																	messageEmbed.react('760631281922605137')
