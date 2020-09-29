@@ -266,6 +266,7 @@ client.on('message', async(message) => {
 																	} else
 																		if (message.content.startsWith(prefix+"emojitest")) {
 																		message.react('760631281922605137')
+																		message.react('760633873334796328')
 																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
