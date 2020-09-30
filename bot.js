@@ -158,10 +158,11 @@ client.on('guildMemberAdd', member => {
 	if(!channel) return;
 
 	var embed = new Discord.MessageEmbed()
-	.setTitle(`Welcome ${member}.`)
+	.setTitle(`Welcome to ${message.guild}.`)
+	.setDescription(`${member}`)
 	.setColor(13101459)
 	.setThumbnail(member.user.displayAvatarURL())
-	.setDescription("I welcome you to the server. May you have a great time. You can go to #🔧roles🔧 to get roles to channels.")
+	.setDescription("Heh, didn't expect you to show up here. May you have a great time.\n\nYou can go to #🔧roles🔧 to get roles to different channels.")
 	channel.send({embed})
 });
 client.on('message', async message => {
