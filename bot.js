@@ -162,7 +162,7 @@ client.on('guildMemberAdd', member => {
 	.setColor(13101459)
 	.setThumbnail(member.user.displayAvatarURL())
 	.setDescription("I welcome you to the server. May you have a great time. You can go to #🔧roles🔧 to get roles to channels.")
-	message.channel.send({embed})
+	channel.send({embed})
 });
 client.on('message', async message => {
 	if (message.content.toLowerCase().startsWith("Hey Crypto")) {
