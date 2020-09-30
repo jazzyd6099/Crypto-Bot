@@ -161,7 +161,7 @@ client.on('guildMemberAdd', member => {
 	.setTitle(`Welcome to ${member.guild}.`)
 	.setColor(13101459)
 	.setThumbnail(member.user.displayAvatarURL())
-	.setDescription(`Heh, didn't expect you to show up here, ${member.user.username}. May you have a great time.\n\nYou can go to <#760625860356866118> to get roles to different channels.`)
+	.setDescription(`Heh, didn't expect you to show up here, ${member.user.id}. May you have a great time.\n\nYou can go to <#760625860356866118> to get access to different channels.`)
 	channel.send({embed})
 });
 client.on('message', async message => {
