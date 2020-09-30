@@ -159,7 +159,7 @@ client.on('guildMemberAdd', member => {
 
 	var embed = new Discord.MessageEmbed()
 	.setTitle(`Welcome ${member}.`)
-	.setcolor(13101459)
+	.setColor(13101459)
 	.setThumbnail(member.user.displayAvatarURL())
 	.setDescription("I welcome you to the server. May you have a great time. You can go to #🔧roles🔧 to get roles to channels.")
 	message.channel.send({embed})
