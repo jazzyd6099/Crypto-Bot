@@ -209,7 +209,7 @@ client.on('message', async(message) => {
 											  .setColor(13101459)
 											  .setTitle("Server Information")
 											  .setDescription(`${message.guild}'s information`)
-											  .setThumbnail(`https://i.postimg.cc/FRVPv8Q1/download.jpg`)
+											  .setThumbnail(message.guild.iconURL())
 											  .addField("Server ID", message.guild.id)
 											  .addField("Owner", message.guild.owner.user.tag)
 											  .addField("Member Count", `This server has ${message.guild.memberCount} members.`)
