@@ -100,6 +100,10 @@ client.on('disconnect', () => {
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760631726577549373")
 							  return user.send("Among Us role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
+							    if (reaction.emoji.name === 'minecraft'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("760650546947948614")
+							  return user.send("Minecraft role was given to you.").catch(() => console.log("Failed to send DM."));
+						  }
 						  } else {
 							  return;
 						  }
