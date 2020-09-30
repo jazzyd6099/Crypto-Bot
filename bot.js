@@ -158,8 +158,8 @@ client.on('guildMemberAdd', member => {
 	if(!channel) return;
 
 	var embed = new Discord.MessageEmbed()
-	.setTitle(`Welcome to ${message.guild}.`)
-	.setDescription(`${member}`)
+	.setTitle(`Welcome to ${member.guild}.`)
+	.setDescription(`${member.user.username}`)
 	.setColor(13101459)
 	.setThumbnail(member.user.displayAvatarURL())
 	.setDescription("Heh, didn't expect you to show up here. May you have a great time.\n\nYou can go to #🔧roles🔧 to get roles to different channels.")
