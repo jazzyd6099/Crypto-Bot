@@ -157,11 +157,7 @@ client.on('guildMemberAdd', member => {
 	const channel = member.guild.channels.cache.find(channel => channel.name === "👋welcome👋");
 	if(!channel) return;
 	
-	var embed = new Discord.MessageEmbed()
-	.setTitle(`Welcome ${member}.`)
-	.setcolor(13101459)
-	.setThumbnail(member.user.displayAvatarURL())
-	.setDescription("I welcome you to the server. May you have a great time. You can go to #🔧roles🔧 to get roles to channels.")
+channel.send(`Welcome ${member}.`)
 });
 client.on('message', async message => {
 	if (message.content.toLowerCase().startsWith("Hey Crypto")) {
