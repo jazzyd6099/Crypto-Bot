@@ -104,6 +104,10 @@ client.on('disconnect', () => {
 							  await reaction.message.guild.members.cache.get(user.id).roles.add("760650546947948614")
 							  return user.send("Minecraft role was given to you.").catch(() => console.log("Failed to send DM."));
 						  }
+							    if (reaction.emoji.name === 'apex'){
+							  await reaction.message.guild.members.cache.get(user.id).roles.add("760654774302801930")
+							  return user.send("Apex Legends role was given to you.").catch(() => console.log("Failed to send DM."));
+						  }
 						  } else {
 							  return;
 						  }
@@ -128,6 +132,9 @@ client.on("messageReactionRemove", async (reaction, user) => {
 	}
 				if(reaction.emoji.name === 'minecraft'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("760650546947948614")
+	}
+				if(reaction.emoji.name === 'apex'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("760654774302801930")
 	}
 	} else {
 		return;
