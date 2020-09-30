@@ -296,12 +296,13 @@ client.on('message', async(message) => {
 																		
 																		var embed = new Discord.MessageEmbed()
 																	.setTitle('Games Roles')
-																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n<:robloxicon:760631281922605137> : `Roblox` \n\n<:amongus:760633873334796328> : `Among Us` \n\n<:minecrafticon:760650391682547732> : `Minecraft`')
+																	.setDescription('React to obtain a role. Click on the game you play and you will unlock the channel for that specified game. \n\n<:robloxicon:760631281922605137> : `Roblox` \n\n<:amongus:760633873334796328> : `Among Us` \n\n<:minecrafticon:760650391682547732> : `Minecraft` \n\n<:apex:760653611771363368> : `Apex Legends`')
 																	.setColor(13101459)
 																	let messageEmbed = await Reactchannell.send(embed)
 																	messageEmbed.react('760631281922605137')
 																	messageEmbed.react('760633873334796328')
 																	messageEmbed.react('760650391682547732')
+																	messageEmbed.react('760653611771363368')
 																		} else
 					if (message.content.startsWith(prefix+"pickalegend")) {
 						var embed = new Discord.MessageEmbed()
