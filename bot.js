@@ -126,6 +126,9 @@ client.on("messageReactionRemove", async (reaction, user) => {
 		if(reaction.emoji.name === 'amongus'){
 		await reaction.message.guild.members.cache.get(user.id).roles.remove("760631726577549373")
 	}
+				if(reaction.emoji.name === 'minecraft'){
+		await reaction.message.guild.members.cache.get(user.id).roles.remove("760650546947948614")
+	}
 	} else {
 		return;
 	}
